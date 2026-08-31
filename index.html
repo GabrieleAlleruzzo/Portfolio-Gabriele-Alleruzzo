@@ -1,350 +1,1430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Barlow:wght@300;400;500;600&amp;display=swap">
-<link rel="stylesheet" href="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/styles.css">
-<script src="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/_ds_bundle.js"></script>
-<script src="./image-slot.js"></script>
-<style>
-  :root {
-    --color-bg: #F4F5F7;
-    --color-surface: #E7E9EE;
-    --color-text: #30333E;
-    --color-accent: #38486C;
-    --color-accent-2: #5F6371;
-    --color-divider: color-mix(in srgb, #30333E 18%, transparent);
-    --color-accent-100: #EEF0F4;
-    --color-accent-200: #DFE2E9;
-    --color-accent-300: #C6CBD6;
-    --color-accent-400: #979EAB;
-    --color-accent-500: #737B8D;
-    --color-accent-600: #4A5A7E;
-    --color-accent-700: #38486C;
-    --color-accent-800: #30333E;
-    --color-accent-900: #23262E;
-    --color-accent-2-100: #EFF0F2;
-    --color-accent-2-200: #DEE0E4;
-    --color-accent-2-300: #C4C7CE;
-    --color-accent-2-400: #979EAB;
-    --color-accent-2-500: #7A7F8C;
-    --color-accent-2-600: #5F6371;
-    --color-accent-2-700: #4A4E5A;
-    --color-accent-2-800: #30333E;
-    --color-accent-2-900: #23262E;
-    --color-neutral-100: #F4F5F7;
-    --color-neutral-200: #E7E9EE;
-    --color-neutral-300: #D3D6DD;
-    --color-neutral-400: #B4B8C2;
-    --color-neutral-500: #979EAB;
-    --color-neutral-600: #787E8B;
-    --color-neutral-700: #5F6371;
-    --color-neutral-800: #42454F;
-    --color-neutral-900: #30333E;
-  }
-  html { scroll-behavior: smooth; }
-  @keyframes ga-spin { to { transform: rotate(360deg); } }
-  [data-r="nav-inline"] { display: flex; margin-left: auto; }
-  [data-r="menu-btn"] { display: none; margin-left: auto; }
-  @media (max-width: 1024px) {
-    [data-r="nav-inline"] { display: none; }
-    [data-r="menu-btn"] { display: flex; }
-  }
-  .btn { transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
-  .btn:hover { transform: scale(1.05); }
-  .btn-primary, .btn-primary:hover, .btn-primary:active { color: #FFFFFF; }
-  .btn-primary:hover { border-color: #FFFFFF; }
-  @keyframes ga-drop { from { opacity: 0; transform: translateY(-10px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); } }
-  [data-r="menu-panel"] { animation: ga-drop 0.28s cubic-bezier(0.2, 0.7, 0.3, 1); transform-origin: top center; }
-  @keyframes ga-slot { 0% { transform: translateY(1em); opacity: 0; } 60% { transform: translateY(-0.06em); opacity: 1; } 100% { transform: translateY(0); opacity: 1; } }
-  [data-r="about-img"] { display: block; }
-  [data-r="header-bar"] { padding: 14px 32px; gap: 32px; }
-  [data-r="hero"] { padding: 88px 32px 72px; grid-template-columns: 1.35fr 1fr; gap: 48px; background: url("./meff-2-mth468ay-1q7b.png") right center / contain no-repeat; }
-  [data-r="services-grid"] { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  [data-r="services-grid"] > article { padding: 26px; }
-  [data-r="projects-grid"] { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  [data-r="about-grid"] { grid-template-columns: 1fr 1.2fr; gap: 56px; padding: 76px 32px; }
-  @media (max-width: 790px) {
-    [data-r="about-grid"] { grid-template-columns: 1fr; gap: 32px; }
-    [data-r="about-media"] { order: 2; }
-    [data-r="about-text"] { order: 1; }
-  }
-  [data-r="contacts-grid"] { grid-template-columns: 1.2fr 1fr; gap: 56px; }
-  [data-r="section-pad"] { padding-left: 32px; padding-right: 32px; }
-  body { margin: 0; }
-  a { color: var(--color-accent-700); text-decoration: none; }
-  a:hover { color: var(--color-accent-900); }
-  @media (max-width: 900px) {
-    [data-r="header-bar"] { padding: 12px 24px; gap: 18px; }
-    [data-r="header-bar"] nav { gap: 18px; }
-    [data-r="hero"] { grid-template-columns: 1fr 300px; padding: 56px 24px 72px; gap: 24px; background-image: none; }
-    [data-r="hero"] > div:nth-child(2) { background: url("./meff-2-mth468ay-1q7b.png") right bottom / contain no-repeat; align-self: stretch; }
-    [data-r="services-grid"] { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    [data-r="services-grid"] > article { padding: 18px 16px; }
-    [data-r="projects-grid"] { gap: 16px; }
-    [data-r="about-grid"], [data-r="contacts-grid"] { grid-template-columns: 1fr; gap: 28px; }
-    [data-r="about-grid"] { padding: 56px 24px; }
-    [data-r="section-pad"] { padding-left: 24px; padding-right: 24px; }
-  }
-  @media (max-width: 576px) {
-    [data-r="hero"] { grid-template-columns: 1fr; padding: 44px 20px 48px; gap: 20px; background-image: none; }
-    [data-r="hero"] > div:nth-child(2) { display: none; }
-    [data-r="section-pad"] { padding-top: 48px; padding-bottom: 48px; }
-    [data-r="services-grid"], [data-r="projects-grid"] { grid-template-columns: 1fr; gap: 20px; }
-    [data-r="services-grid"] > article { padding: 24px 20px; }
-    [data-r="about-grid"], [data-r="contacts-grid"] { grid-template-columns: 1fr; gap: 24px; }
-    [data-r="about-grid"] { padding: 48px 20px; }
-    [data-r="section-pad"] { padding-left: 20px; padding-right: 20px; }
-    [data-r="header-bar"] { padding: 12px 20px; gap: 14px; flex-wrap: wrap; }
-    [data-r="header-bar"] nav { gap: 14px; font-size: 13px; }
-  }
-  [lang="it"], [lang="en"], [lang="de"] { display: none; }
-  html:not([data-lang]) [lang="it"], html[data-lang="it"] [lang="it"], html[data-lang="en"] [lang="en"], html[data-lang="de"] [lang="de"] { display: inline; }
-  @media (max-width: 576px) {
-    [data-r="menu-panel"] { flex-direction: column; gap: 14px; }
-  }
-  #lang-it, #lang-en, #lang-de { background: transparent; color: #30333E; }
-  html:not([data-lang]) #lang-it, html[data-lang="it"] #lang-it, html[data-lang="en"] #lang-en, html[data-lang="de"] #lang-de { background: #30333E; color: var(--color-bg); }
-</style>
-</helmet>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin=""
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Barlow:wght@300;400;500;600&amp;display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/styles.css"
+        />
+        <script src="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/_ds_bundle.js"></script>
+        <script src="./image-slot.js"></script>
+        <style>
+          :root {
+            --color-bg: #f4f5f7;
+            --color-surface: #e7e9ee;
+            --color-text: #30333e;
+            --color-accent: #38486c;
+            --color-accent-2: #5f6371;
+            --color-divider: color-mix(in srgb, #30333e 18%, transparent);
+            --color-accent-100: #eef0f4;
+            --color-accent-200: #dfe2e9;
+            --color-accent-300: #c6cbd6;
+            --color-accent-400: #979eab;
+            --color-accent-500: #737b8d;
+            --color-accent-600: #4a5a7e;
+            --color-accent-700: #38486c;
+            --color-accent-800: #30333e;
+            --color-accent-900: #23262e;
+            --color-accent-2-100: #eff0f2;
+            --color-accent-2-200: #dee0e4;
+            --color-accent-2-300: #c4c7ce;
+            --color-accent-2-400: #979eab;
+            --color-accent-2-500: #7a7f8c;
+            --color-accent-2-600: #5f6371;
+            --color-accent-2-700: #4a4e5a;
+            --color-accent-2-800: #30333e;
+            --color-accent-2-900: #23262e;
+            --color-neutral-100: #f4f5f7;
+            --color-neutral-200: #e7e9ee;
+            --color-neutral-300: #d3d6dd;
+            --color-neutral-400: #b4b8c2;
+            --color-neutral-500: #979eab;
+            --color-neutral-600: #787e8b;
+            --color-neutral-700: #5f6371;
+            --color-neutral-800: #42454f;
+            --color-neutral-900: #30333e;
+          }
+          html {
+            scroll-behavior: smooth;
+          }
+          @keyframes ga-spin {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+          [data-r="nav-inline"] {
+            display: flex;
+            margin-left: auto;
+          }
+          [data-r="menu-btn"] {
+            display: none;
+            margin-left: auto;
+          }
+          @media (max-width: 1024px) {
+            [data-r="nav-inline"] {
+              display: none;
+            }
+            [data-r="menu-btn"] {
+              display: flex;
+            }
+          }
+          .btn {
+            transition:
+              transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+          }
+          .btn:hover {
+            transform: scale(1.05);
+          }
+          .btn-primary,
+          .btn-primary:hover,
+          .btn-primary:active {
+            color: #ffffff;
+          }
+          .btn-primary:hover {
+            border-color: #ffffff;
+          }
+          @keyframes ga-drop {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+              clip-path: inset(0 0 100% 0);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+              clip-path: inset(0 0 0 0);
+            }
+          }
+          [data-r="menu-panel"] {
+            animation: ga-drop 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
+            transform-origin: top center;
+          }
+          @keyframes ga-slot {
+            0% {
+              transform: translateY(1em);
+              opacity: 0;
+            }
+            60% {
+              transform: translateY(-0.06em);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+          [data-r="about-img"] {
+            display: block;
+          }
+          [data-r="header-bar"] {
+            padding: 14px 32px;
+            gap: 32px;
+          }
+          [data-r="hero"] {
+            padding: 88px 32px 72px;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 48px;
+            background: url("./meff-2-mth468ay-1q7b.png") right center / contain
+              no-repeat;
+          }
+          [data-r="services-grid"] {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+          }
+          [data-r="services-grid"] > article {
+            padding: 26px;
+          }
+          [data-r="projects-grid"] {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+          }
+          [data-r="about-grid"] {
+            grid-template-columns: 1fr 1.2fr;
+            gap: 56px;
+            padding: 76px 32px;
+          }
+          @media (max-width: 790px) {
+            [data-r="about-grid"] {
+              grid-template-columns: 1fr;
+              gap: 32px;
+            }
+            [data-r="about-media"] {
+              order: 2;
+            }
+            [data-r="about-text"] {
+              order: 1;
+            }
+          }
+          [data-r="contacts-grid"] {
+            grid-template-columns: 1.2fr 1fr;
+            gap: 56px;
+          }
+          [data-r="section-pad"] {
+            padding-left: 32px;
+            padding-right: 32px;
+          }
+          body {
+            margin: 0;
+          }
+          a {
+            color: var(--color-accent-700);
+            text-decoration: none;
+          }
+          a:hover {
+            color: var(--color-accent-900);
+          }
+          @media (max-width: 900px) {
+            [data-r="header-bar"] {
+              padding: 12px 24px;
+              gap: 18px;
+            }
+            [data-r="header-bar"] nav {
+              gap: 18px;
+            }
+            [data-r="hero"] {
+              grid-template-columns: 1fr 300px;
+              padding: 56px 24px 72px;
+              gap: 24px;
+              background-image: none;
+            }
+            [data-r="hero"] > div:nth-child(2) {
+              background: url("./meff-2-mth468ay-1q7b.png") right bottom /
+                contain no-repeat;
+              align-self: stretch;
+            }
+            [data-r="services-grid"] {
+              grid-template-columns: repeat(3, 1fr);
+              gap: 16px;
+            }
+            [data-r="services-grid"] > article {
+              padding: 18px 16px;
+            }
+            [data-r="projects-grid"] {
+              gap: 16px;
+            }
+            [data-r="about-grid"],
+            [data-r="contacts-grid"] {
+              grid-template-columns: 1fr;
+              gap: 28px;
+            }
+            [data-r="about-grid"] {
+              padding: 56px 24px;
+            }
+            [data-r="section-pad"] {
+              padding-left: 24px;
+              padding-right: 24px;
+            }
+          }
+          @media (max-width: 576px) {
+            [data-r="hero"] {
+              grid-template-columns: 1fr;
+              padding: 44px 20px 48px;
+              gap: 20px;
+              background-image: none;
+            }
+            [data-r="hero"] > div:nth-child(2) {
+              display: none;
+            }
+            [data-r="section-pad"] {
+              padding-top: 48px;
+              padding-bottom: 48px;
+            }
+            [data-r="services-grid"],
+            [data-r="projects-grid"] {
+              grid-template-columns: 1fr;
+              gap: 20px;
+            }
+            [data-r="services-grid"] > article {
+              padding: 24px 20px;
+            }
+            [data-r="about-grid"],
+            [data-r="contacts-grid"] {
+              grid-template-columns: 1fr;
+              gap: 24px;
+            }
+            [data-r="about-grid"] {
+              padding: 48px 20px;
+            }
+            [data-r="section-pad"] {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+            [data-r="header-bar"] {
+              padding: 12px 20px;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+            [data-r="header-bar"] nav {
+              gap: 14px;
+              font-size: 13px;
+            }
+          }
+          [lang="it"],
+          [lang="en"],
+          [lang="de"] {
+            display: none;
+          }
+          html:not([data-lang]) [lang="it"],
+          html[data-lang="it"] [lang="it"],
+          html[data-lang="en"] [lang="en"],
+          html[data-lang="de"] [lang="de"] {
+            display: inline;
+          }
+          @media (max-width: 576px) {
+            [data-r="menu-panel"] {
+              flex-direction: column;
+              gap: 14px;
+            }
+          }
+          #lang-it,
+          #lang-en,
+          #lang-de {
+            background: transparent;
+            color: #30333e;
+          }
+          html:not([data-lang]) #lang-it,
+          html[data-lang="it"] #lang-it,
+          html[data-lang="en"] #lang-en,
+          html[data-lang="de"] #lang-de {
+            background: #30333e;
+            color: var(--color-bg);
+          }
+        </style>
+      </helmet>
 
-<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; display: flex; flex-direction: column;">
-
-  <header style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-divider);">
-    <div data-r="header-bar" style="max-width: 1180px; margin: 0 auto; display: flex; align-items: center;">
-      <a href="#top" style="display: flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; color: #30333E;">
-        <img src="assets/logo-mark.png" alt="Gabriele Alleruzzo" style="height: 34px; width: auto;">
-        Gabriele Alleruzzo
-      </a>
-      <nav data-r="nav-inline" style="align-items: center; gap: 26px; font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;">
-        <a href="Portfolio Home.dc.html" style="color: #30333E;"><span lang="it">Home</span><span lang="en">Home</span><span lang="de">Home</span></a>
-        <a href="About.dc.html" onClick="{{ closeMenu }}" style="color: #30333E;"><span lang="it">Su di me</span><span lang="en">About</span><span lang="de">Über mich</span></a>
-        <a href="Progetti.dc.html" style="color: #30333E;"><span lang="it">Progetti</span><span lang="en">Projects</span><span lang="de">Projekte</span></a>
-        <a href="Contatti.dc.html" onClick="{{ closeMenu }}" style="color: #30333E;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></a>
-      </nav>
-      <button data-r="menu-btn" type="button" aria-label="Menu" onClick="{{ toggleMenu }}" style="flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 27px; padding: 0; background: transparent; border: 0; cursor: pointer;">
-        <span style="display: block; height: 1.5px; background: #30333E;"></span>
-        <span style="display: block; height: 1.5px; background: #30333E;"></span>
-        <span style="display: block; height: 1.5px; background: #30333E;"></span>
-      </button>
-      <div style="display: flex; border: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.1em;">
-        <button id="lang-it" type="button" onClick="{{ setIt }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit;">IT</button>
-        <button id="lang-en" type="button" onClick="{{ setEn }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit; border-left: 1px solid var(--color-divider);">EN</button>
-        <button id="lang-de" type="button" onClick="{{ setDe }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit; border-left: 1px solid var(--color-divider);">DE</button>
-      </div>
-    </div>
-    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <nav data-r="menu-panel" style="border-top: 1px solid var(--color-divider); background: var(--color-bg); display: flex; align-items: center; justify-content: center; gap: 34px; padding: 18px 24px; font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;">
-        <a href="Portfolio Home.dc.html" style="color: #30333E;"><span lang="it">Home</span><span lang="en">Home</span><span lang="de">Home</span></a>
-        <a href="About.dc.html" onClick="{{ closeMenu }}" style="color: #30333E;"><span lang="it">Su di me</span><span lang="en">About</span><span lang="de">Über mich</span></a>
-        <a href="Progetti.dc.html" style="color: #30333E;"><span lang="it">Progetti</span><span lang="en">Projects</span><span lang="de">Projekte</span></a>
-        <a href="Contatti.dc.html" onClick="{{ closeMenu }}" style="color: #30333E;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></a>
-      </nav>
-    </sc-if>
-  </header>
-
-  <section id="top" data-r="hero" data-screen-label="Hero" style="max-width: 1180px; margin: 0 auto; display: grid; align-items: stretch; justify-content: flex-start; text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); gap: 145px">
-    <div>
-      <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 22px;">
-        <span lang="it">GRAPHIC DESIGN —  BRAND IDENTITY —  SOCIAL MEDIA</span><span lang="en">GRAPHIC DESIGN — BRAND IDENTITY — SOCIAL MEDIA</span><span lang="de">GRAFIKDESIGN — MARKENIDENTITÄT — SOZIALE MEDIEN</span>
-      </div>
-      <h1 style="font-size: clamp(48px, 7vw, 92px); line-height: 0.95; letter-spacing: -0.02em; margin: 0 0 24px; text-wrap: balance;">
-        <span lang="it">Designer di<br>{{ rotIt }}<br>che muovono il pubblico</span><span lang="en">Designer of<br>{{ rotEn }}<br>that move people</span><span lang="de">Gestalter von<br>{{ rotDe }}<br>die Menschen bewegen</span>
-      </h1>
-      <p style="font-size: 18px; line-height: 1.6; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty;">
-        <span lang="it">Mi chiamo Gabriele. Lavoro a fianco di piccole imprese e progetti indipendenti: parto dalle vostre parole, e le porto fino a un logo, un sistema di identità e contenuti social che sembrano davvero vostri.</span><span lang="en">I'm Gabriele. I work alongside small businesses and independent projects: I start from your own words and carry them through to a logo, an identity system and social content that genuinely feel like yours.</span><span lang="de">Ich heiße Gabriele. Ich arbeite mit kleinen Unternehmen und unabhängigen Projekten: Ich beginne bei Ihren eigenen Worten und führe sie bis zu einem Logo, einem Identitätssystem und Social-Media-Inhalten, die sich wirklich nach Ihnen anfühlen.</span>
-      </p>
-      <div style="display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap;">
-        <a class="btn btn-primary" href="#projects" style="padding: 11px 22px; font-size: 15px; letter-spacing: 0.06em;">
-          <span lang="it">Guarda i progetti</span><span lang="en">See the work</span><span lang="de">Projekte ansehen</span>
-        </a>
-        <a class="btn btn-secondary" href="Contatti.dc.html" style="padding: 11px 22px; font-size: 15px; letter-spacing: 0.06em;">
-          <span lang="it">Contattami</span><span lang="en">Get in touch</span><span lang="de">Schreiben Sie mir</span>
-        </a>
-      </div>
-    </div><div style="position: relative; align-self: stretch; justify-self: end; width: 100%; height: 100%">
-      
-    </div>
-    
-  </section>
-
-  <section data-screen-label="Services" style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
-    <div data-r="section-pad" style="max-width: 1180px; margin: 0 auto; padding-top: 64px; padding-bottom: 64px;">
-      <h6 style="color: var(--color-accent-700); margin-bottom: 34px;"><span lang="it">Cosa faccio</span><span lang="en">What I do</span><span lang="de">Was ich mache</span></h6>
-      <div data-r="services-grid" style="display: grid;">
-        <article class="card blueprint">
-          <div style="display: flex; justify-content: center; margin-bottom: 18px;">
-            <svg width="53" height="53" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"></path><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"></path><path d="m2.3 2.3 7.286 7.286"></path><circle cx="11" cy="11" r="2"></circle></svg>
+      <div
+        style="
+          background: var(--color-bg);
+          color: var(--color-text);
+          font-family: var(--font-body);
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <header
+          style="
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--color-divider);
+          "
+        >
+          <div
+            data-r="header-bar"
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <a
+              href="#top"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-family: var(--font-heading);
+                font-weight: 700;
+                font-size: 17px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #30333e;
+              "
+            >
+              <img
+                src="assets/logo-mark.png"
+                alt="Gabriele Alleruzzo"
+                style="height: 34px; width: auto"
+              />
+              Gabriele Alleruzzo
+            </a>
+            <nav
+              data-r="nav-inline"
+              style="
+                align-items: center;
+                gap: 26px;
+                font-family: var(--font-heading);
+                font-size: 14px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+              "
+            >
+              <a href="index.html" style="color: #30333e"
+                ><span lang="it">Home</span><span lang="en">Home</span
+                ><span lang="de">Home</span></a
+              >
+              <a
+                href="About.dc.html"
+                onClick="{{ closeMenu }}"
+                style="color: #30333e"
+                ><span lang="it">Su di me</span><span lang="en">About</span
+                ><span lang="de">Über mich</span></a
+              >
+              <a href="Progetti.dc.html" style="color: #30333e"
+                ><span lang="it">Progetti</span><span lang="en">Projects</span
+                ><span lang="de">Projekte</span></a
+              >
+              <a
+                href="Contatti.dc.html"
+                onClick="{{ closeMenu }}"
+                style="color: #30333e"
+                ><span lang="it">Contatti</span><span lang="en">Contacts</span
+                ><span lang="de">Kontakt</span></a
+              >
+            </nav>
+            <button
+              data-r="menu-btn"
+              type="button"
+              aria-label="Menu"
+              onClick="{{ toggleMenu }}"
+              style="
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                width: 30px;
+                height: 27px;
+                padding: 0;
+                background: transparent;
+                border: 0;
+                cursor: pointer;
+              "
+            >
+              <span
+                style="display: block; height: 1.5px; background: #30333e"
+              ></span>
+              <span
+                style="display: block; height: 1.5px; background: #30333e"
+              ></span>
+              <span
+                style="display: block; height: 1.5px; background: #30333e"
+              ></span>
+            </button>
+            <div
+              style="
+                display: flex;
+                border: 1px solid var(--color-divider);
+                font-family: var(--font-heading);
+                font-size: 12px;
+                letter-spacing: 0.1em;
+              "
+            >
+              <button
+                id="lang-it"
+                type="button"
+                onClick="{{ setIt }}"
+                style="
+                  border: 0;
+                  padding: 5px 9px;
+                  cursor: pointer;
+                  font: inherit;
+                "
+              >
+                IT
+              </button>
+              <button
+                id="lang-en"
+                type="button"
+                onClick="{{ setEn }}"
+                style="
+                  border: 0;
+                  padding: 5px 9px;
+                  cursor: pointer;
+                  font: inherit;
+                  border-left: 1px solid var(--color-divider);
+                "
+              >
+                EN
+              </button>
+              <button
+                id="lang-de"
+                type="button"
+                onClick="{{ setDe }}"
+                style="
+                  border: 0;
+                  padding: 5px 9px;
+                  cursor: pointer;
+                  font: inherit;
+                  border-left: 1px solid var(--color-divider);
+                "
+              >
+                DE
+              </button>
+            </div>
           </div>
-          <h3 class="card-title" style="font-size: 26px; margin: 14px 0 10px; text-align: center;">Logo design</h3>
-          <p class="card-body" style="margin: 0; color: color-mix(in srgb, var(--color-text) 72%, transparent);">
-            <span lang="it">Un segno solo, disegnato con calma: bozzetti a mano, poi vettoriale, poi tutte le versioni che vi serviranno davvero.</span><span lang="en">One mark, drawn slowly: hand sketches, then vectors, then every version you will actually need.</span><span lang="de">Ein einziges Zeichen, in Ruhe gezeichnet: Handskizzen, dann Vektoren, dann jede Version, die Sie wirklich brauchen.</span>
-          </p>
-        </article>
-        <article class="card blueprint">
-          <div style="display: flex; justify-content: center; margin-bottom: 18px;">
-            <svg width="53" height="53" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12.5a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .58-.92"></path><path d="M2 17.5a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .58-.92"></path></svg>
-          </div>
-          <h3 class="card-title" style="font-size: 26px; margin: 14px 0 10px; text-align: center;">Brand identity</h3>
-          <p class="card-body" style="margin: 0; color: color-mix(in srgb, var(--color-text) 72%, transparent);">
-            <span lang="it">Colori, caratteri, griglie e tono di voce raccolti in un piccolo manuale, così chi lavora con voi non deve indovinare.</span><span lang="en">Colours, type, grids and tone of voice gathered into a short manual, so nobody working with you has to guess.</span><span lang="de">Farben, Schriften, Raster und Tonalität in einem kurzen Handbuch gesammelt, damit niemand, der mit Ihnen arbeitet, raten muss.</span>
-          </p>
-        </article>
-        <article class="card blueprint">
-          <div style="display: flex; justify-content: center; margin-bottom: 18px;">
-            <svg width="53" height="53" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"></path><path d="M17.5 6.5h.01"></path></svg>
-          </div>
-          <h3 class="card-title" style="font-size: 26px; margin: 14px 0 10px; text-align: center;"><span lang="it">Contenuti social</span><span lang="en">Social contents</span><span lang="de">Social-Media-Inhalte</span></h3>
-          <p class="card-body" style="margin: 0; color: color-mix(in srgb, var(--color-text) 72%, transparent);">
-            <span lang="it">Template per post, storie e caroselli, pensati perché possiate aggiornarli da soli senza perdere la coerenza.</span><span lang="en">Templates for posts, stories and carousels, made so you can update them yourself without losing coherence.</span><span lang="de">Vorlagen für Posts, Stories und Karussells, so gemacht, dass Sie sie selbst aktualisieren können, ohne die Einheitlichkeit zu verlieren.</span>
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
+          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+            <nav
+              data-r="menu-panel"
+              style="
+                border-top: 1px solid var(--color-divider);
+                background: var(--color-bg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 34px;
+                padding: 18px 24px;
+                font-family: var(--font-heading);
+                font-size: 15px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+              "
+            >
+              <a href="Portfolio Home.dc.html" style="color: #30333e"
+                ><span lang="it">Home</span><span lang="en">Home</span
+                ><span lang="de">Home</span></a
+              >
+              <a
+                href="About.dc.html"
+                onClick="{{ closeMenu }}"
+                style="color: #30333e"
+                ><span lang="it">Su di me</span><span lang="en">About</span
+                ><span lang="de">Über mich</span></a
+              >
+              <a href="Progetti.dc.html" style="color: #30333e"
+                ><span lang="it">Progetti</span><span lang="en">Projects</span
+                ><span lang="de">Projekte</span></a
+              >
+              <a
+                href="Contatti.dc.html"
+                onClick="{{ closeMenu }}"
+                style="color: #30333e"
+                ><span lang="it">Contatti</span><span lang="en">Contacts</span
+                ><span lang="de">Kontakt</span></a
+              >
+            </nav>
+          </sc-if>
+        </header>
 
-  <section id="projects" data-r="section-pad" data-screen-label="Projects" style="max-width: 1180px; margin: 0 auto; padding-top: 72px; padding-bottom: 72px;">
-    <div style="display: flex; align-items: baseline; gap: 24px; margin-bottom: 34px;">
-      <h2 style="font-size: 44px; margin: 0;"><span lang="it">Progetti scelti</span><span lang="en">Selected projects</span><span lang="de">Ausgewählte Projekte</span></h2>
-      <a href="Progetti.dc.html" style="margin-left: auto; font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase;">
-        <span lang="it">Tutti i progetti →</span><span lang="en">All projects →</span><span lang="de">Alle Projekte →</span>
-      </a>
-    </div>
-    <div data-r="projects-grid" style="display: grid; align-items: stretch;">
-      <dc-import name="ProjectCard" hint-size="100%,560px" href="Progetto.dc.html?p=startfound" img="assets/projects/startfound/cover.png" title="Startfound" anno="2021" servizi-it="Logo design, Merchandise, Contenuti social" servizi-en="Logo design, Merchandise, Social contents" servizi-de="Logodesign, Merchandise, Social-Media-Inhalte" desc-it="Startfound è un'agenzia di consulenza finanziaria specializzata nel settore dell'ecosostenibilità con sede a Messina…" desc-en="Startfound is a financial consulting agency specialising in environmental sustainability, based in Messina…" desc-de="Startfound ist eine Finanzberatung mit Sitz in Messina, spezialisiert auf ökologische Nachhaltigkeit…"></dc-import>
-      <dc-import name="ProjectCard" hint-size="100%,560px" href="Progetto.dc.html?p=storica" img="assets/projects/storica/cover.png" title="Storica Assicurazioni 1832" anno="2021" servizi-it="Logo design, Brand identity, Contenuti social" servizi-en="Logo design, Brand identity, Social contents" servizi-de="Logodesign, Markenidentität, Social-Media-Inhalte" desc-it="Storica è un'agenzia assicurativa di Messina attiva dal 1832…" desc-en="Storica is an insurance agency in Messina, active since 1832…" desc-de="Storica ist eine Versicherungsagentur in Messina, tätig seit 1832…"></dc-import>
-      <dc-import name="ProjectCard" hint-size="100%,560px" href="Progetto.dc.html?p=zankle" img="assets/projects/zankle/cover.png" title="Zankle Birrificio Artiginale" anno="2020" servizi-it="Logo design, Brand identity, Packaging" servizi-en="Logo design, Brand identity, Packaging" servizi-de="Logodesign, Markenidentität, Packaging" desc-it="Zankle è l'unico birrificio artigianale della città di Messina, produttore delle birre Scilla e Cariddi…" desc-en="Zankle is the only craft brewery in the city of Messina, producer of the Scilla and Cariddi beers…" desc-de="Zankle ist die einzige Craft-Brauerei der Stadt Messina und braut die Biere Scilla und Cariddi…"></dc-import>
-    
-    </div>
-  </section>
-
-  <section id="about" data-screen-label="About" style="color: var(--color-neutral-100); background-color: #38486C">
-    <div data-r="about-grid" style="display: grid; max-width: 1180px; margin: 0 auto; align-items: start;">
-      <div data-r="about-media">
-        <img src="./home-01-mthpslsm-gty4.png" alt="home-01" width="1522" height="1015" style="max-width: 100%; height: 412px; display: block; object-fit: cover; width: 544px; aspect-ratio: 1522 / 1015">
-      </div>
-      <div data-r="about-text">
-        <h6 style="color: var(--color-accent-300); margin-bottom: 18px;"><span lang="it">Su di me</span><span lang="en">About me</span><span lang="de">Über mich</span></h6>
-        <h2 style="font-size: 42px; margin: 0 0 20px; color: var(--color-neutral-100);">
-          <span lang="it">Dieci anni di marchi disegnati<br>a mano e finiti in vettoriale.</span><span lang="en">Ten years of marks<br>drawn by hand<br>and finished<br>in vectors.</span><span lang="de">Zehn Jahre Zeichen,<br>von Hand gezeichnet<br>und in Vektoren<br>fertiggestellt.</span>
-        </h2>
-        <p style="font-size: 18px; line-height: 1.65; color: color-mix(in srgb, var(--color-neutral-100) 86%, transparent); text-wrap: pretty;">
-          <span lang="it">Ho iniziato disegnando insegne per i negozi sotto casa e non ho mai smesso di partire dalla matita. Mi piacciono i progetti in cui si parla molto prima di aprire il computer: chi siete, chi volete accanto, cosa non volete assolutamente sembrare.</span><span lang="en">I started by drawing signs for the shops on my street, and I never stopped starting with a pencil. I like projects where we talk a lot before opening the computer: who you are, who you want beside you, what you absolutely don't want to look like.</span><span lang="de">Angefangen habe ich mit Schildern für die Läden in meiner Straße, und ich beginne bis heute mit dem Bleistift. Ich mag Projekte, bei denen viel gesprochen wird, bevor der Rechner aufgeht: wer Sie sind, wen Sie an Ihrer Seite wollen, wonach Sie auf keinen Fall aussehen möchten.</span>
-        </p>
-        <p style="font-size: 18px; line-height: 1.65; color: color-mix(in srgb, var(--color-neutral-100) 86%, transparent); text-wrap: pretty;">
-          <span lang="it">Lavoro da solo, su pochi progetti alla volta, e vi tengo dentro ogni passaggio.</span><span lang="en">I work on my own, on a few projects at a time, and I keep you inside every step.</span><span lang="de">Ich arbeite allein, an wenigen Projekten gleichzeitig, und binde Sie in jeden Schritt ein.</span>
-        </p>
-        <div style="display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap;">
-          <a class="btn btn-primary" href="About.dc.html" style="padding: 11px 22px; font-size: 15px; letter-spacing: 0.06em; color: var(--color-bg); background-color: var(--color-bg); border-width: 1px; border-style: solid; border-color: var(--color-bg)">
-            <span lang="it" style="color: #38486C">Leggi la mia storia</span><span lang="en">Read my story</span><span lang="de">Meine Geschichte lesen</span>
-          </a>
-          <a class="btn" href="Contatti.dc.html" download="Gabriele-Alleruzzo-CV.pdf" style="padding: 11px 22px; font-size: 15px; letter-spacing: 0.06em; color: var(--color-neutral-100); border-color: var(--color-bg)">
-            <span lang="it">Scarica il CV (PDF)</span><span lang="en">Download CV (PDF)</span><span lang="de">Lebenslauf herunterladen (PDF)</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacts" data-r="section-pad" data-screen-label="Contacts" style="max-width: 1180px; margin: 0 auto; padding-top: 76px; padding-bottom: 64px;">
-    <div data-r="contacts-grid" style="display: grid; align-items: start;">
-      <div>
-        <h6 style="color: var(--color-accent-700); margin-bottom: 18px;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></h6>
-        <h2 style="font-size: clamp(36px, 4.6vw, 58px); margin: 0 0 20px; line-height: 1;">
-          <span lang="it">Raccontatemi<br>il vostro progetto.</span><span lang="en">Tell me about<br>your project.</span><span lang="de">Erzählen Sie mir<br>von Ihrem Projekt.</span>
-        </h2>
-        <p style="font-size: 18px; max-width: 42ch; color: color-mix(in srgb, var(--color-text) 76%, transparent); text-wrap: pretty;">
-          <span lang="it">Due righe bastano: cosa fate, dove volete arrivare e quando. Rispondo entro due giorni lavorativi, sempre io.</span><span lang="en">Two lines are enough: what you do, where you want to get to and when. I reply within two working days, always personally.</span><span lang="de">Zwei Zeilen genügen: was Sie machen, wohin Sie wollen und bis wann. Ich antworte innerhalb von zwei Werktagen, immer persönlich.</span>
-        </p>
-      </div>
-      <div class="card blueprint" style="padding: 28px;">
-        <dl style="margin: 0; display: grid; gap: 20px;">
+        <section
+          id="top"
+          data-r="hero"
+          data-screen-label="Hero"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            align-items: stretch;
+            justify-content: flex-start;
+            text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            gap: 145px;
+          "
+        >
           <div>
-            <dt style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Email</dt>
-            <dd style="margin: 4px 0 0; font-size: 20px;"><a href="mailto:alleruzzoweb@gmail.com">alleruzzoweb@gmail.com</a></dd>
+            <div
+              style="
+                font-family: var(--font-heading);
+                font-size: 13px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                color: var(--color-accent-700);
+                margin-bottom: 22px;
+              "
+            >
+              <span lang="it"
+                >GRAPHIC DESIGN — BRAND IDENTITY — SOCIAL MEDIA</span
+              ><span lang="en"
+                >GRAPHIC DESIGN — BRAND IDENTITY — SOCIAL MEDIA</span
+              ><span lang="de"
+                >GRAFIKDESIGN — MARKENIDENTITÄT — SOZIALE MEDIEN</span
+              >
+            </div>
+            <h1
+              style="
+                font-size: clamp(48px, 7vw, 92px);
+                line-height: 0.95;
+                letter-spacing: -0.02em;
+                margin: 0 0 24px;
+                text-wrap: balance;
+              "
+            >
+              <span lang="it"
+                >Designer di<br />{{ rotIt }}<br />che muovono il pubblico</span
+              ><span lang="en"
+                >Designer of<br />{{ rotEn }}<br />that move people</span
+              ><span lang="de"
+                >Gestalter von<br />{{ rotDe }}<br />die Menschen bewegen</span
+              >
+            </h1>
+            <p
+              style="
+                font-size: 18px;
+                line-height: 1.6;
+                max-width: 46ch;
+                color: color-mix(in srgb, var(--color-text) 78%, transparent);
+                text-wrap: pretty;
+              "
+            >
+              <span lang="it"
+                >Mi chiamo Gabriele. Lavoro a fianco di piccole imprese e
+                progetti indipendenti: parto dalle vostre parole, e le porto
+                fino a un logo, un sistema di identità e contenuti social che
+                sembrano davvero vostri.</span
+              ><span lang="en"
+                >I'm Gabriele. I work alongside small businesses and independent
+                projects: I start from your own words and carry them through to
+                a logo, an identity system and social content that genuinely
+                feel like yours.</span
+              ><span lang="de"
+                >Ich heiße Gabriele. Ich arbeite mit kleinen Unternehmen und
+                unabhängigen Projekten: Ich beginne bei Ihren eigenen Worten und
+                führe sie bis zu einem Logo, einem Identitätssystem und
+                Social-Media-Inhalten, die sich wirklich nach Ihnen
+                anfühlen.</span
+              >
+            </p>
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                margin-top: 34px;
+                flex-wrap: wrap;
+              "
+            >
+              <a
+                class="btn btn-primary"
+                href="#projects"
+                style="
+                  padding: 11px 22px;
+                  font-size: 15px;
+                  letter-spacing: 0.06em;
+                "
+              >
+                <span lang="it">Guarda i progetti</span
+                ><span lang="en">See the work</span
+                ><span lang="de">Projekte ansehen</span>
+              </a>
+              <a
+                class="btn btn-secondary"
+                href="Contatti.dc.html"
+                style="
+                  padding: 11px 22px;
+                  font-size: 15px;
+                  letter-spacing: 0.06em;
+                "
+              >
+                <span lang="it">Contattami</span
+                ><span lang="en">Get in touch</span
+                ><span lang="de">Schreiben Sie mir</span>
+              </a>
+            </div>
           </div>
-          <div>
-            <dt style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);"><span lang="it">Telefono</span><span lang="en">Phone</span><span lang="de">Telefon</span></dt>
-            <dd style="margin: 4px 0 0; font-size: 20px;"><a href="tel:+393492864488">+39 349 286 4488</a></dd>
+          <div
+            style="
+              position: relative;
+              align-self: stretch;
+              justify-self: end;
+              width: 100%;
+              height: 100%;
+            "
+          ></div>
+        </section>
+
+        <section
+          data-screen-label="Services"
+          style="
+            border-top: 1px solid var(--color-divider);
+            border-bottom: 1px solid var(--color-divider);
+          "
+        >
+          <div
+            data-r="section-pad"
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding-top: 64px;
+              padding-bottom: 64px;
+            "
+          >
+            <h6 style="color: var(--color-accent-700); margin-bottom: 34px">
+              <span lang="it">Cosa faccio</span><span lang="en">What I do</span
+              ><span lang="de">Was ich mache</span>
+            </h6>
+            <div data-r="services-grid" style="display: grid">
+              <article class="card blueprint">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 18px;
+                  "
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--color-accent)"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"
+                    ></path>
+                    <path
+                      d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"
+                    ></path>
+                    <path d="m2.3 2.3 7.286 7.286"></path>
+                    <circle cx="11" cy="11" r="2"></circle>
+                  </svg>
+                </div>
+                <h3
+                  class="card-title"
+                  style="
+                    font-size: 26px;
+                    margin: 14px 0 10px;
+                    text-align: center;
+                  "
+                >
+                  Logo design
+                </h3>
+                <p
+                  class="card-body"
+                  style="
+                    margin: 0;
+                    color: color-mix(
+                      in srgb,
+                      var(--color-text) 72%,
+                      transparent
+                    );
+                  "
+                >
+                  <span lang="it"
+                    >Un segno solo, disegnato con calma: bozzetti a mano, poi
+                    vettoriale, poi tutte le versioni che vi serviranno
+                    davvero.</span
+                  ><span lang="en"
+                    >One mark, drawn slowly: hand sketches, then vectors, then
+                    every version you will actually need.</span
+                  ><span lang="de"
+                    >Ein einziges Zeichen, in Ruhe gezeichnet: Handskizzen, dann
+                    Vektoren, dann jede Version, die Sie wirklich
+                    brauchen.</span
+                  >
+                </p>
+              </article>
+              <article class="card blueprint">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 18px;
+                  "
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--color-accent)"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
+                    ></path>
+                    <path
+                      d="M2 12.5a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .58-.92"
+                    ></path>
+                    <path
+                      d="M2 17.5a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .58-.92"
+                    ></path>
+                  </svg>
+                </div>
+                <h3
+                  class="card-title"
+                  style="
+                    font-size: 26px;
+                    margin: 14px 0 10px;
+                    text-align: center;
+                  "
+                >
+                  Brand identity
+                </h3>
+                <p
+                  class="card-body"
+                  style="
+                    margin: 0;
+                    color: color-mix(
+                      in srgb,
+                      var(--color-text) 72%,
+                      transparent
+                    );
+                  "
+                >
+                  <span lang="it"
+                    >Colori, caratteri, griglie e tono di voce raccolti in un
+                    piccolo manuale, così chi lavora con voi non deve
+                    indovinare.</span
+                  ><span lang="en"
+                    >Colours, type, grids and tone of voice gathered into a
+                    short manual, so nobody working with you has to guess.</span
+                  ><span lang="de"
+                    >Farben, Schriften, Raster und Tonalität in einem kurzen
+                    Handbuch gesammelt, damit niemand, der mit Ihnen arbeitet,
+                    raten muss.</span
+                  >
+                </p>
+              </article>
+              <article class="card blueprint">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 18px;
+                  "
+                >
+                  <svg
+                    width="53"
+                    height="53"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--color-accent)"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect width="20" height="20" x="2" y="2" rx="5"></rect>
+                    <path
+                      d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"
+                    ></path>
+                    <path d="M17.5 6.5h.01"></path>
+                  </svg>
+                </div>
+                <h3
+                  class="card-title"
+                  style="
+                    font-size: 26px;
+                    margin: 14px 0 10px;
+                    text-align: center;
+                  "
+                >
+                  <span lang="it">Contenuti social</span
+                  ><span lang="en">Social contents</span
+                  ><span lang="de">Social-Media-Inhalte</span>
+                </h3>
+                <p
+                  class="card-body"
+                  style="
+                    margin: 0;
+                    color: color-mix(
+                      in srgb,
+                      var(--color-text) 72%,
+                      transparent
+                    );
+                  "
+                >
+                  <span lang="it"
+                    >Template per post, storie e caroselli, pensati perché
+                    possiate aggiornarli da soli senza perdere la
+                    coerenza.</span
+                  ><span lang="en"
+                    >Templates for posts, stories and carousels, made so you can
+                    update them yourself without losing coherence.</span
+                  ><span lang="de"
+                    >Vorlagen für Posts, Stories und Karussells, so gemacht,
+                    dass Sie sie selbst aktualisieren können, ohne die
+                    Einheitlichkeit zu verlieren.</span
+                  >
+                </p>
+              </article>
+            </div>
           </div>
-          <div>
-            <dt style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);"><span lang="it">Social</span><span lang="en">Social</span><span lang="de">Social</span></dt>
-            <dd style="margin: 8px 0 0; display: flex; gap: 14px;">
-              <a href="https://www.instagram.com/gabriele.aller_gd/" target="_blank" rel="noopener" aria-label="Instagram" title="gabriele.aller_gd" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--color-divider); color: var(--color-accent-700);" style-hover="background: var(--color-accent-100)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"></path><path d="M17.5 6.5h.01"></path></svg></a>
-              <a href="https://www.facebook.com/profile.php?id=100063893657369" target="_blank" rel="noopener" aria-label="Facebook" title="Gabriele Alleruzzo Graphic Design" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--color-divider); color: var(--color-accent-700);" style-hover="background: var(--color-accent-100)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-              <a href="https://www.linkedin.com/in/gabriele-alleruzzo/" target="_blank" rel="noopener" aria-label="LinkedIn" title="Gabriele Alleruzzo" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid var(--color-divider); color: var(--color-accent-700);" style-hover="background: var(--color-accent-100)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-            </dd>
+        </section>
+
+        <section
+          id="projects"
+          data-r="section-pad"
+          data-screen-label="Projects"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            padding-top: 72px;
+            padding-bottom: 72px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: baseline;
+              gap: 24px;
+              margin-bottom: 34px;
+            "
+          >
+            <h2 style="font-size: 44px; margin: 0">
+              <span lang="it">Progetti scelti</span
+              ><span lang="en">Selected projects</span
+              ><span lang="de">Ausgewählte Projekte</span>
+            </h2>
+            <a
+              href="Progetti.dc.html"
+              style="
+                margin-left: auto;
+                font-family: var(--font-heading);
+                font-size: 14px;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+              "
+            >
+              <span lang="it">Tutti i progetti →</span
+              ><span lang="en">All projects →</span
+              ><span lang="de">Alle Projekte →</span>
+            </a>
           </div>
-          <div>
-            <dt style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);"><span lang="it">Sede</span><span lang="en">Based in</span><span lang="de">Standort</span></dt>
-            <dd style="margin: 4px 0 0; font-size: 20px;">Messina</dd>
+          <div
+            data-r="projects-grid"
+            style="display: grid; align-items: stretch"
+          >
+            <dc-import
+              name="ProjectCard"
+              hint-size="100%,560px"
+              href="Progetto.dc.html?p=startfound"
+              img="assets/projects/startfound/cover.png"
+              title="Startfound"
+              anno="2021"
+              servizi-it="Logo design, Merchandise, Contenuti social"
+              servizi-en="Logo design, Merchandise, Social contents"
+              servizi-de="Logodesign, Merchandise, Social-Media-Inhalte"
+              desc-it="Startfound è un'agenzia di consulenza finanziaria specializzata nel settore dell'ecosostenibilità con sede a Messina…"
+              desc-en="Startfound is a financial consulting agency specialising in environmental sustainability, based in Messina…"
+              desc-de="Startfound ist eine Finanzberatung mit Sitz in Messina, spezialisiert auf ökologische Nachhaltigkeit…"
+            ></dc-import>
+            <dc-import
+              name="ProjectCard"
+              hint-size="100%,560px"
+              href="Progetto.dc.html?p=storica"
+              img="assets/projects/storica/cover.png"
+              title="Storica Assicurazioni 1832"
+              anno="2021"
+              servizi-it="Logo design, Brand identity, Contenuti social"
+              servizi-en="Logo design, Brand identity, Social contents"
+              servizi-de="Logodesign, Markenidentität, Social-Media-Inhalte"
+              desc-it="Storica è un'agenzia assicurativa di Messina attiva dal 1832…"
+              desc-en="Storica is an insurance agency in Messina, active since 1832…"
+              desc-de="Storica ist eine Versicherungsagentur in Messina, tätig seit 1832…"
+            ></dc-import>
+            <dc-import
+              name="ProjectCard"
+              hint-size="100%,560px"
+              href="Progetto.dc.html?p=zankle"
+              img="assets/projects/zankle/cover.png"
+              title="Zankle Birrificio Artiginale"
+              anno="2020"
+              servizi-it="Logo design, Brand identity, Packaging"
+              servizi-en="Logo design, Brand identity, Packaging"
+              servizi-de="Logodesign, Markenidentität, Packaging"
+              desc-it="Zankle è l'unico birrificio artigianale della città di Messina, produttore delle birre Scilla e Cariddi…"
+              desc-en="Zankle is the only craft brewery in the city of Messina, producer of the Scilla and Cariddi beers…"
+              desc-de="Zankle ist die einzige Craft-Brauerei der Stadt Messina und braut die Biere Scilla und Cariddi…"
+            ></dc-import>
           </div>
-        </dl>
-        <a class="btn btn-primary btn-block" href="Contatti.dc.html" style="margin-top: 26px; padding: 12px 22px; font-size: 15px; letter-spacing: 0.06em;">
-          <span lang="it">Vai alla pagina contatti</span><span lang="en">Go to the contacts page</span><span lang="de">Zur Kontaktseite</span>
-        </a>
+        </section>
+
+        <section
+          id="about"
+          data-screen-label="About"
+          style="color: var(--color-neutral-100); background-color: #38486c"
+        >
+          <div
+            data-r="about-grid"
+            style="
+              display: grid;
+              max-width: 1180px;
+              margin: 0 auto;
+              align-items: start;
+            "
+          >
+            <div data-r="about-media">
+              <img
+                src="./home-01-mthpslsm-gty4.png"
+                alt="home-01"
+                width="1522"
+                height="1015"
+                style="
+                  max-width: 100%;
+                  height: 412px;
+                  display: block;
+                  object-fit: cover;
+                  width: 544px;
+                  aspect-ratio: 1522 / 1015;
+                "
+              />
+            </div>
+            <div data-r="about-text">
+              <h6 style="color: var(--color-accent-300); margin-bottom: 18px">
+                <span lang="it">Su di me</span><span lang="en">About me</span
+                ><span lang="de">Über mich</span>
+              </h6>
+              <h2
+                style="
+                  font-size: 42px;
+                  margin: 0 0 20px;
+                  color: var(--color-neutral-100);
+                "
+              >
+                <span lang="it"
+                  >Dieci anni di marchi disegnati<br />a mano e finiti in
+                  vettoriale.</span
+                ><span lang="en"
+                  >Ten years of marks<br />drawn by hand<br />and finished<br />in
+                  vectors.</span
+                ><span lang="de"
+                  >Zehn Jahre Zeichen,<br />von Hand gezeichnet<br />und in
+                  Vektoren<br />fertiggestellt.</span
+                >
+              </h2>
+              <p
+                style="
+                  font-size: 18px;
+                  line-height: 1.65;
+                  color: color-mix(
+                    in srgb,
+                    var(--color-neutral-100) 86%,
+                    transparent
+                  );
+                  text-wrap: pretty;
+                "
+              >
+                <span lang="it"
+                  >Ho iniziato disegnando insegne per i negozi sotto casa e non
+                  ho mai smesso di partire dalla matita. Mi piacciono i progetti
+                  in cui si parla molto prima di aprire il computer: chi siete,
+                  chi volete accanto, cosa non volete assolutamente
+                  sembrare.</span
+                ><span lang="en"
+                  >I started by drawing signs for the shops on my street, and I
+                  never stopped starting with a pencil. I like projects where we
+                  talk a lot before opening the computer: who you are, who you
+                  want beside you, what you absolutely don't want to look
+                  like.</span
+                ><span lang="de"
+                  >Angefangen habe ich mit Schildern für die Läden in meiner
+                  Straße, und ich beginne bis heute mit dem Bleistift. Ich mag
+                  Projekte, bei denen viel gesprochen wird, bevor der Rechner
+                  aufgeht: wer Sie sind, wen Sie an Ihrer Seite wollen, wonach
+                  Sie auf keinen Fall aussehen möchten.</span
+                >
+              </p>
+              <p
+                style="
+                  font-size: 18px;
+                  line-height: 1.65;
+                  color: color-mix(
+                    in srgb,
+                    var(--color-neutral-100) 86%,
+                    transparent
+                  );
+                  text-wrap: pretty;
+                "
+              >
+                <span lang="it"
+                  >Lavoro da solo, su pochi progetti alla volta, e vi tengo
+                  dentro ogni passaggio.</span
+                ><span lang="en"
+                  >I work on my own, on a few projects at a time, and I keep you
+                  inside every step.</span
+                ><span lang="de"
+                  >Ich arbeite allein, an wenigen Projekten gleichzeitig, und
+                  binde Sie in jeden Schritt ein.</span
+                >
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  margin-top: 26px;
+                  flex-wrap: wrap;
+                "
+              >
+                <a
+                  class="btn btn-primary"
+                  href="About.dc.html"
+                  style="
+                    padding: 11px 22px;
+                    font-size: 15px;
+                    letter-spacing: 0.06em;
+                    color: var(--color-bg);
+                    background-color: var(--color-bg);
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: var(--color-bg);
+                  "
+                >
+                  <span lang="it" style="color: #38486c"
+                    >Leggi la mia storia</span
+                  ><span lang="en">Read my story</span
+                  ><span lang="de">Meine Geschichte lesen</span>
+                </a>
+                <a
+                  class="btn"
+                  href="Contatti.dc.html"
+                  download="Gabriele-Alleruzzo-CV.pdf"
+                  style="
+                    padding: 11px 22px;
+                    font-size: 15px;
+                    letter-spacing: 0.06em;
+                    color: var(--color-neutral-100);
+                    border-color: var(--color-bg);
+                  "
+                >
+                  <span lang="it">Scarica il CV (PDF)</span
+                  ><span lang="en">Download CV (PDF)</span
+                  ><span lang="de">Lebenslauf herunterladen (PDF)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contacts"
+          data-r="section-pad"
+          data-screen-label="Contacts"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            padding-top: 76px;
+            padding-bottom: 64px;
+          "
+        >
+          <div data-r="contacts-grid" style="display: grid; align-items: start">
+            <div>
+              <h6 style="color: var(--color-accent-700); margin-bottom: 18px">
+                <span lang="it">Contatti</span><span lang="en">Contacts</span
+                ><span lang="de">Kontakt</span>
+              </h6>
+              <h2
+                style="
+                  font-size: clamp(36px, 4.6vw, 58px);
+                  margin: 0 0 20px;
+                  line-height: 1;
+                "
+              >
+                <span lang="it">Raccontatemi<br />il vostro progetto.</span
+                ><span lang="en">Tell me about<br />your project.</span
+                ><span lang="de">Erzählen Sie mir<br />von Ihrem Projekt.</span>
+              </h2>
+              <p
+                style="
+                  font-size: 18px;
+                  max-width: 42ch;
+                  color: color-mix(in srgb, var(--color-text) 76%, transparent);
+                  text-wrap: pretty;
+                "
+              >
+                <span lang="it"
+                  >Due righe bastano: cosa fate, dove volete arrivare e quando.
+                  Rispondo entro due giorni lavorativi, sempre io.</span
+                ><span lang="en"
+                  >Two lines are enough: what you do, where you want to get to
+                  and when. I reply within two working days, always
+                  personally.</span
+                ><span lang="de"
+                  >Zwei Zeilen genügen: was Sie machen, wohin Sie wollen und bis
+                  wann. Ich antworte innerhalb von zwei Werktagen, immer
+                  persönlich.</span
+                >
+              </p>
+            </div>
+            <div class="card blueprint" style="padding: 28px">
+              <dl style="margin: 0; display: grid; gap: 20px">
+                <div>
+                  <dt
+                    style="
+                      font-family: var(--font-heading);
+                      font-size: 12px;
+                      letter-spacing: 0.14em;
+                      text-transform: uppercase;
+                      color: color-mix(
+                        in srgb,
+                        var(--color-text) 55%,
+                        transparent
+                      );
+                    "
+                  >
+                    Email
+                  </dt>
+                  <dd style="margin: 4px 0 0; font-size: 20px">
+                    <a href="mailto:alleruzzoweb@gmail.com"
+                      >alleruzzoweb@gmail.com</a
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    style="
+                      font-family: var(--font-heading);
+                      font-size: 12px;
+                      letter-spacing: 0.14em;
+                      text-transform: uppercase;
+                      color: color-mix(
+                        in srgb,
+                        var(--color-text) 55%,
+                        transparent
+                      );
+                    "
+                  >
+                    <span lang="it">Telefono</span><span lang="en">Phone</span
+                    ><span lang="de">Telefon</span>
+                  </dt>
+                  <dd style="margin: 4px 0 0; font-size: 20px">
+                    <a href="tel:+393492864488">+39 349 286 4488</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    style="
+                      font-family: var(--font-heading);
+                      font-size: 12px;
+                      letter-spacing: 0.14em;
+                      text-transform: uppercase;
+                      color: color-mix(
+                        in srgb,
+                        var(--color-text) 55%,
+                        transparent
+                      );
+                    "
+                  >
+                    <span lang="it">Social</span><span lang="en">Social</span
+                    ><span lang="de">Social</span>
+                  </dt>
+                  <dd style="margin: 8px 0 0; display: flex; gap: 14px">
+                    <a
+                      href="https://www.instagram.com/gabriele.aller_gd/"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Instagram"
+                      title="gabriele.aller_gd"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid var(--color-divider);
+                        color: var(--color-accent-700);
+                      "
+                      style-hover="background: var(--color-accent-100)"
+                      ><svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect width="20" height="20" x="2" y="2" rx="5"></rect>
+                        <path
+                          d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"
+                        ></path>
+                        <path d="M17.5 6.5h.01"></path></svg
+                    ></a>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=100063893657369"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Facebook"
+                      title="Gabriele Alleruzzo Graphic Design"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid var(--color-divider);
+                        color: var(--color-accent-700);
+                      "
+                      style-hover="background: var(--color-accent-100)"
+                      ><svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                        ></path></svg
+                    ></a>
+                    <a
+                      href="https://www.linkedin.com/in/gabriele-alleruzzo/"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="LinkedIn"
+                      title="Gabriele Alleruzzo"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid var(--color-divider);
+                        color: var(--color-accent-700);
+                      "
+                      style-hover="background: var(--color-accent-100)"
+                      ><svg
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+                        ></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle></svg
+                    ></a>
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    style="
+                      font-family: var(--font-heading);
+                      font-size: 12px;
+                      letter-spacing: 0.14em;
+                      text-transform: uppercase;
+                      color: color-mix(
+                        in srgb,
+                        var(--color-text) 55%,
+                        transparent
+                      );
+                    "
+                  >
+                    <span lang="it">Sede</span><span lang="en">Based in</span
+                    ><span lang="de">Standort</span>
+                  </dt>
+                  <dd style="margin: 4px 0 0; font-size: 20px">Messina</dd>
+                </div>
+              </dl>
+              <a
+                class="btn btn-primary btn-block"
+                href="Contatti.dc.html"
+                style="
+                  margin-top: 26px;
+                  padding: 12px 22px;
+                  font-size: 15px;
+                  letter-spacing: 0.06em;
+                "
+              >
+                <span lang="it">Vai alla pagina contatti</span
+                ><span lang="en">Go to the contacts page</span
+                ><span lang="de">Zur Kontaktseite</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <footer
+          style="border-top: 1px solid var(--color-divider); margin-top: auto"
+        >
+          <div
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 22px 32px;
+              display: flex;
+              gap: 24px;
+              flex-wrap: wrap;
+              font-family: var(--font-heading);
+              font-size: 12px;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              color: color-mix(in srgb, var(--color-text) 55%, transparent);
+            "
+          >
+            <span>Gabriele Alleruzzo</span>
+            <span style="margin-left: auto"
+              ><span lang="it">Logo · Identità · Social</span
+              ><span lang="en">Logo · Identity · Social</span
+              ><span lang="de">Logo · Identität · Social</span></span
+            >
+            <span>© 2026</span>
+          </div>
+        </footer>
       </div>
-    </div>
-  </section>
-
-  <footer style="border-top: 1px solid var(--color-divider); margin-top: auto;">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 22px 32px; display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">
-      <span>Gabriele Alleruzzo</span>
-      <span style="margin-left: auto;"><span lang="it">Logo · Identità · Social</span><span lang="en">Logo · Identity · Social</span><span lang="de">Logo · Identität · Social</span></span>
-      <span>© 2026</span>
-    </div>
-  </footer>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;'it' | 'en'&quot;,&quot;section&quot;:&quot;Contenuto&quot;}}">
-class Component extends DCLogic {
-  state = { menuOpen: false, word: 0 };
-  componentDidMount() {
-    this._slot = setInterval(() => this.setState(st => ({ word: (st.word + 1) % 3 })), 2600);
-    const saved = this.props.lang || localStorage.getItem('ga-portfolio-lang') || 'it';
-    this.applyLang(saved);
-  }
-  componentDidUpdate(prev) {
-    if (prev.lang !== this.props.lang && this.props.lang) this.applyLang(this.props.lang);
-  }
-  applyLang(lang) {
-    document.documentElement.setAttribute('data-lang', lang);
-    try { localStorage.setItem('ga-portfolio-lang', lang); } catch (e) {}
-  }
-  componentWillUnmount() { clearInterval(this._slot); }
-  rotator(words) {
-    const i = this.state.word % words.length;
-    const scale = 1;
-    return React.createElement('span', {
-      style: { display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom', whiteSpace: 'nowrap', color: 'var(--color-accent-700)', position: 'relative', zIndex: 2, lineHeight: 1, fontSize: scale === 1 ? 'inherit' : scale + 'em', paddingBottom: '0.3em', marginBottom: '-0.3em' }
-    }, React.createElement('span', {
-      key: i,
-      style: { display: 'inline-block', animation: 'ga-slot 0.55s cubic-bezier(0.2, 0.7, 0.3, 1)' }
-    }, words[i]));
-  }
-  renderVals() {
-    return {
-      rotIt: this.rotator(['logotypi', 'web sites', 'contenuti social']),
-      rotEn: this.rotator(['logotypes', 'web sites', 'social contents']),
-      rotDe: this.rotator(['Logotypen', 'Websites', 'Social-Media-Inhalte']),
-      menuOpen: !!this.state.menuOpen,
-      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
-      closeMenu: () => this.setState({ menuOpen: false }),
-      setIt: () => this.applyLang('it'),
-      setEn: () => this.applyLang('en'),
-      setDe: () => this.applyLang('de')
-    };
-  }
-}
-</script>
-</body>
+    </x-dc>
+    <script
+      type="text/x-dc"
+      data-dc-script
+      data-props='{"lang":{"editor":"enum","options":["it","en"],"default":"it","tsType":"&apos;it&apos; | &apos;en&apos;","section":"Contenuto"}}'
+    >
+      class Component extends DCLogic {
+        state = { menuOpen: false, word: 0 };
+        componentDidMount() {
+          this._slot = setInterval(() => this.setState(st => ({ word: (st.word + 1) % 3 })), 2600);
+          const saved = this.props.lang || localStorage.getItem('ga-portfolio-lang') || 'it';
+          this.applyLang(saved);
+        }
+        componentDidUpdate(prev) {
+          if (prev.lang !== this.props.lang && this.props.lang) this.applyLang(this.props.lang);
+        }
+        applyLang(lang) {
+          document.documentElement.setAttribute('data-lang', lang);
+          try { localStorage.setItem('ga-portfolio-lang', lang); } catch (e) {}
+        }
+        componentWillUnmount() { clearInterval(this._slot); }
+        rotator(words) {
+          const i = this.state.word % words.length;
+          const scale = 1;
+          return React.createElement('span', {
+            style: { display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom', whiteSpace: 'nowrap', color: 'var(--color-accent-700)', position: 'relative', zIndex: 2, lineHeight: 1, fontSize: scale === 1 ? 'inherit' : scale + 'em', paddingBottom: '0.3em', marginBottom: '-0.3em' }
+          }, React.createElement('span', {
+            key: i,
+            style: { display: 'inline-block', animation: 'ga-slot 0.55s cubic-bezier(0.2, 0.7, 0.3, 1)' }
+          }, words[i]));
+        }
+        renderVals() {
+          return {
+            rotIt: this.rotator(['logotypi', 'web sites', 'contenuti social']),
+            rotEn: this.rotator(['logotypes', 'web sites', 'social contents']),
+            rotDe: this.rotator(['Logotypen', 'Websites', 'Social-Media-Inhalte']),
+            menuOpen: !!this.state.menuOpen,
+            toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+            closeMenu: () => this.setState({ menuOpen: false }),
+            setIt: () => this.applyLang('it'),
+            setEn: () => this.applyLang('en'),
+            setDe: () => this.applyLang('de')
+          };
+        }
+      }
+    </script>
+  </body>
 </html>

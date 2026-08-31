@@ -1,204 +1,669 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Barlow:wght@300;400;500;600&amp;display=swap">
-<link rel="stylesheet" href="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/styles.css">
-<script src="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/_ds_bundle.js"></script>
-<style>
-  :root {
-    --color-bg: #F4F5F7;
-    --color-surface: #E7E9EE;
-    --color-text: #30333E;
-    --color-accent: #38486C;
-    --color-accent-2: #5F6371;
-    --color-divider: color-mix(in srgb, #30333E 18%, transparent);
-    --color-accent-100: #EEF0F4;
-    --color-accent-200: #DFE2E9;
-    --color-accent-300: #C6CBD6;
-    --color-accent-400: #979EAB;
-    --color-accent-500: #737B8D;
-    --color-accent-600: #4A5A7E;
-    --color-accent-700: #38486C;
-    --color-accent-800: #30333E;
-    --color-accent-900: #23262E;
-    --color-accent-2-100: #EFF0F2;
-    --color-accent-2-200: #DEE0E4;
-    --color-accent-2-300: #C4C7CE;
-    --color-accent-2-400: #979EAB;
-    --color-accent-2-500: #7A7F8C;
-    --color-accent-2-600: #5F6371;
-    --color-accent-2-700: #4A4E5A;
-    --color-accent-2-800: #30333E;
-    --color-accent-2-900: #23262E;
-    --color-neutral-100: #F4F5F7;
-    --color-neutral-200: #E7E9EE;
-    --color-neutral-300: #D3D6DD;
-    --color-neutral-400: #B4B8C2;
-    --color-neutral-500: #979EAB;
-    --color-neutral-600: #787E8B;
-    --color-neutral-700: #5F6371;
-    --color-neutral-800: #42454F;
-    --color-neutral-900: #30333E;
-  }
-  html { scroll-behavior: smooth; }
-  [data-r="nav-inline"] { display: flex; margin-left: auto; }
-  [data-r="menu-btn"] { display: none; margin-left: auto; }
-  @media (max-width: 1024px) {
-    [data-r="nav-inline"] { display: none; }
-    [data-r="menu-btn"] { display: flex; }
-  }
-  .btn { transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
-  .btn:hover { transform: scale(1.05); }
-  .btn-primary, .btn-primary:hover, .btn-primary:active { color: #FFFFFF; }
-  .btn-primary:hover { border-color: #FFFFFF; }
-  @keyframes ga-drop { from { opacity: 0; transform: translateY(-10px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); } }
-  [data-r="menu-panel"] { animation: ga-drop 0.28s cubic-bezier(0.2, 0.7, 0.3, 1); transform-origin: top center; }
-  body { margin: 0; }
-  a { color: var(--color-accent-700); text-decoration: none; }
-  a:hover { color: var(--color-accent-900); }
-  [data-r="header-bar"] { padding: 14px 32px; gap: 32px; }
-  [data-r="about-cols"] { grid-template-columns: 3fr 3fr; gap: 48px; padding: 64px 32px 80px; }
-  @media (max-width: 900px) {
-    [data-r="header-bar"] { padding: 12px 24px; gap: 18px; }
-    [data-r="about-cols"] { gap: 32px; padding: 48px 24px 56px; }
-  }
-  @media (max-width: 768px) {
-    [data-r="about-cols"] { grid-template-columns: 1fr; }
-    [data-r="about-cols"][data-rev="1"] > div:first-child { order: 2; }
-  }
-  @media (max-width: 576px) {
-    [data-r="menu-panel"] { flex-direction: column; gap: 14px; }
-    [data-r="header-bar"] { padding: 12px 20px; gap: 14px; flex-wrap: wrap; }
-    [data-r="about-cols"] { padding: 40px 20px 48px; }
-  }
-  #lang-it, #lang-en, #lang-de { background: transparent; color: #30333E; }
-  html:not([data-lang]) #lang-it, html[data-lang="it"] #lang-it, html[data-lang="en"] #lang-en, html[data-lang="de"] #lang-de { background: #30333E; color: var(--color-bg); }
-  [lang="it"], [lang="en"], [lang="de"] { display: none; }
-  html:not([data-lang]) [lang="it"], html[data-lang="it"] [lang="it"], html[data-lang="en"] [lang="en"], html[data-lang="de"] [lang="de"] { display: inline; }
-</style>
-</helmet>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin=""
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&amp;family=Barlow:wght@300;400;500;600&amp;display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/styles.css"
+        />
+        <script src="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/_ds_bundle.js"></script>
+        <style>
+          :root {
+            --color-bg: #f4f5f7;
+            --color-surface: #e7e9ee;
+            --color-text: #30333e;
+            --color-accent: #38486c;
+            --color-accent-2: #5f6371;
+            --color-divider: color-mix(in srgb, #30333e 18%, transparent);
+            --color-accent-100: #eef0f4;
+            --color-accent-200: #dfe2e9;
+            --color-accent-300: #c6cbd6;
+            --color-accent-400: #979eab;
+            --color-accent-500: #737b8d;
+            --color-accent-600: #4a5a7e;
+            --color-accent-700: #38486c;
+            --color-accent-800: #30333e;
+            --color-accent-900: #23262e;
+            --color-accent-2-100: #eff0f2;
+            --color-accent-2-200: #dee0e4;
+            --color-accent-2-300: #c4c7ce;
+            --color-accent-2-400: #979eab;
+            --color-accent-2-500: #7a7f8c;
+            --color-accent-2-600: #5f6371;
+            --color-accent-2-700: #4a4e5a;
+            --color-accent-2-800: #30333e;
+            --color-accent-2-900: #23262e;
+            --color-neutral-100: #f4f5f7;
+            --color-neutral-200: #e7e9ee;
+            --color-neutral-300: #d3d6dd;
+            --color-neutral-400: #b4b8c2;
+            --color-neutral-500: #979eab;
+            --color-neutral-600: #787e8b;
+            --color-neutral-700: #5f6371;
+            --color-neutral-800: #42454f;
+            --color-neutral-900: #30333e;
+          }
+          html {
+            scroll-behavior: smooth;
+          }
+          [data-r="nav-inline"] {
+            display: flex;
+            margin-left: auto;
+          }
+          [data-r="menu-btn"] {
+            display: none;
+            margin-left: auto;
+          }
+          @media (max-width: 1024px) {
+            [data-r="nav-inline"] {
+              display: none;
+            }
+            [data-r="menu-btn"] {
+              display: flex;
+            }
+          }
+          .btn {
+            transition:
+              transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+          }
+          .btn:hover {
+            transform: scale(1.05);
+          }
+          .btn-primary,
+          .btn-primary:hover,
+          .btn-primary:active {
+            color: #ffffff;
+          }
+          .btn-primary:hover {
+            border-color: #ffffff;
+          }
+          @keyframes ga-drop {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+              clip-path: inset(0 0 100% 0);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+              clip-path: inset(0 0 0 0);
+            }
+          }
+          [data-r="menu-panel"] {
+            animation: ga-drop 0.28s cubic-bezier(0.2, 0.7, 0.3, 1);
+            transform-origin: top center;
+          }
+          body {
+            margin: 0;
+          }
+          a {
+            color: var(--color-accent-700);
+            text-decoration: none;
+          }
+          a:hover {
+            color: var(--color-accent-900);
+          }
+          [data-r="header-bar"] {
+            padding: 14px 32px;
+            gap: 32px;
+          }
+          [data-r="about-cols"] {
+            grid-template-columns: 3fr 3fr;
+            gap: 48px;
+            padding: 64px 32px 80px;
+          }
+          @media (max-width: 900px) {
+            [data-r="header-bar"] {
+              padding: 12px 24px;
+              gap: 18px;
+            }
+            [data-r="about-cols"] {
+              gap: 32px;
+              padding: 48px 24px 56px;
+            }
+          }
+          @media (max-width: 768px) {
+            [data-r="about-cols"] {
+              grid-template-columns: 1fr;
+            }
+            [data-r="about-cols"][data-rev="1"] > div:first-child {
+              order: 2;
+            }
+          }
+          @media (max-width: 576px) {
+            [data-r="menu-panel"] {
+              flex-direction: column;
+              gap: 14px;
+            }
+            [data-r="header-bar"] {
+              padding: 12px 20px;
+              gap: 14px;
+              flex-wrap: wrap;
+            }
+            [data-r="about-cols"] {
+              padding: 40px 20px 48px;
+            }
+          }
+          #lang-it,
+          #lang-en,
+          #lang-de {
+            background: transparent;
+            color: #30333e;
+          }
+          html:not([data-lang]) #lang-it,
+          html[data-lang="it"] #lang-it,
+          html[data-lang="en"] #lang-en,
+          html[data-lang="de"] #lang-de {
+            background: #30333e;
+            color: var(--color-bg);
+          }
+          [lang="it"],
+          [lang="en"],
+          [lang="de"] {
+            display: none;
+          }
+          html:not([data-lang]) [lang="it"],
+          html[data-lang="it"] [lang="it"],
+          html[data-lang="en"] [lang="en"],
+          html[data-lang="de"] [lang="de"] {
+            display: inline;
+          }
+        </style>
+      </helmet>
 
-<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; display: flex; flex-direction: column;">
+      <div
+        style="
+          background: var(--color-bg);
+          color: var(--color-text);
+          font-family: var(--font-body);
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        "
+      >
+        <header
+          style="
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--color-divider);
+          "
+        >
+          <div
+            data-r="header-bar"
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <a
+              href="Portfolio Home.dc.html"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-family: var(--font-heading);
+                font-weight: 700;
+                font-size: 17px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #30333e;
+              "
+            >
+              <img
+                src="assets/logo-mark.png"
+                alt="Gabriele Alleruzzo"
+                style="height: 34px; width: auto"
+              />
+              Gabriele Alleruzzo
+            </a>
+            <nav
+              data-r="nav-inline"
+              style="
+                align-items: center;
+                gap: 26px;
+                font-family: var(--font-heading);
+                font-size: 14px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+              "
+            >
+              <a href="index.html" style="color: #30333e"
+                ><span lang="it">Home</span><span lang="en">Home</span
+                ><span lang="de">Home</span></a
+              >
+              <a href="About.dc.html" style="color: #30333e"
+                ><span lang="it">Su di me</span><span lang="en">About</span
+                ><span lang="de">Über mich</span></a
+              >
+              <a href="Progetti.dc.html" style="color: #30333e"
+                ><span lang="it">Progetti</span><span lang="en">Projects</span
+                ><span lang="de">Projekte</span></a
+              >
+              <a href="Contatti.dc.html" style="color: #30333e"
+                ><span lang="it">Contatti</span><span lang="en">Contacts</span
+                ><span lang="de">Kontakt</span></a
+              >
+            </nav>
+            <button
+              data-r="menu-btn"
+              type="button"
+              aria-label="Menu"
+              onClick="{{ toggleMenu }}"
+              style="
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                width: 30px;
+                height: 27px;
+                padding: 0;
+                background: transparent;
+                border: 0;
+                cursor: pointer;
+              "
+            >
+              <span
+                style="display: block; height: 1.5px; background: #30333e"
+              ></span>
+              <span
+                style="display: block; height: 1.5px; background: #30333e"
+              ></span>
+              <span
+                style="display: block; height: 1.5px; background: #30333e"
+              ></span>
+            </button>
+            <div
+              style="
+                display: flex;
+                border: 1px solid var(--color-divider);
+                font-family: var(--font-heading);
+                font-size: 12px;
+                letter-spacing: 0.1em;
+              "
+            >
+              <button
+                id="lang-it"
+                type="button"
+                onClick="{{ setIt }}"
+                style="
+                  border: 0;
+                  padding: 5px 9px;
+                  cursor: pointer;
+                  font: inherit;
+                "
+              >
+                IT
+              </button>
+              <button
+                id="lang-en"
+                type="button"
+                onClick="{{ setEn }}"
+                style="
+                  border: 0;
+                  padding: 5px 9px;
+                  cursor: pointer;
+                  font: inherit;
+                  border-left: 1px solid var(--color-divider);
+                "
+              >
+                EN
+              </button>
+              <button
+                id="lang-de"
+                type="button"
+                onClick="{{ setDe }}"
+                style="
+                  border: 0;
+                  padding: 5px 9px;
+                  cursor: pointer;
+                  font: inherit;
+                  border-left: 1px solid var(--color-divider);
+                "
+              >
+                DE
+              </button>
+            </div>
+          </div>
+          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+            <nav
+              data-r="menu-panel"
+              style="
+                border-top: 1px solid var(--color-divider);
+                background: var(--color-bg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 34px;
+                padding: 18px 24px;
+                font-family: var(--font-heading);
+                font-size: 15px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+              "
+            >
+              <a href="Portfolio Home.dc.html" style="color: #30333e"
+                ><span lang="it">Home</span><span lang="en">Home</span
+                ><span lang="de">Home</span></a
+              >
+              <a href="About.dc.html" style="color: #30333e"
+                ><span lang="it">Su di me</span><span lang="en">About</span
+                ><span lang="de">Über mich</span></a
+              >
+              <a href="Progetti.dc.html" style="color: #30333e"
+                ><span lang="it">Progetti</span><span lang="en">Projects</span
+                ><span lang="de">Projekte</span></a
+              >
+              <a href="Contatti.dc.html" style="color: #30333e"
+                ><span lang="it">Contatti</span><span lang="en">Contacts</span
+                ><span lang="de">Kontakt</span></a
+              >
+            </nav>
+          </sc-if>
+        </header>
 
-  <header style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-divider);">
-    <div data-r="header-bar" style="max-width: 1180px; margin: 0 auto; display: flex; align-items: center;">
-      <a href="Portfolio Home.dc.html" style="display: flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; color: #30333E;">
-        <img src="assets/logo-mark.png" alt="Gabriele Alleruzzo" style="height: 34px; width: auto;">
-        Gabriele Alleruzzo
-      </a>
-      <nav data-r="nav-inline" style="align-items: center; gap: 26px; font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;">
-        <a href="Portfolio Home.dc.html" style="color: #30333E;"><span lang="it">Home</span><span lang="en">Home</span><span lang="de">Home</span></a>
-        <a href="About.dc.html" style="color: #30333E;"><span lang="it">Su di me</span><span lang="en">About</span><span lang="de">Über mich</span></a>
-        <a href="Progetti.dc.html" style="color: #30333E;"><span lang="it">Progetti</span><span lang="en">Projects</span><span lang="de">Projekte</span></a>
-        <a href="Contatti.dc.html" style="color: #30333E;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></a>
-      </nav>
-      <button data-r="menu-btn" type="button" aria-label="Menu" onClick="{{ toggleMenu }}" style="flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 27px; padding: 0; background: transparent; border: 0; cursor: pointer;">
-        <span style="display: block; height: 1.5px; background: #30333E;"></span>
-        <span style="display: block; height: 1.5px; background: #30333E;"></span>
-        <span style="display: block; height: 1.5px; background: #30333E;"></span>
-      </button>
-      <div style="display: flex; border: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.1em;">
-        <button id="lang-it" type="button" onClick="{{ setIt }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit;">IT</button>
-        <button id="lang-en" type="button" onClick="{{ setEn }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit; border-left: 1px solid var(--color-divider);">EN</button>
-        <button id="lang-de" type="button" onClick="{{ setDe }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit; border-left: 1px solid var(--color-divider);">DE</button>
+        <section
+          data-r="about-cols"
+          data-screen-label="About"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            align-items: start;
+          "
+        >
+          <div>
+            <h6 style="color: var(--color-accent-700); margin-bottom: 16px">
+              <span lang="it">Su di me</span><span lang="en">About me</span
+              ><span lang="de">Über mich</span>
+            </h6>
+            <h1
+              style="
+                font-size: clamp(38px, 5vw, 64px);
+                line-height: 1;
+                margin: 0 0 24px;
+              "
+            >
+              <span lang="it"
+                >Dieci anni di marchi disegnati a mano e finiti in
+                vettoriale.</span
+              ><span lang="en"
+                >Ten years of marks drawn by hand and finished in vectors.</span
+              ><span lang="de"
+                >Zehn Jahre Zeichen, von Hand gezeichnet und in Vektoren
+                fertiggestellt.</span
+              >
+            </h1>
+            <p
+              style="
+                font-size: 18px;
+                line-height: 1.65;
+                color: color-mix(in srgb, var(--color-text) 78%, transparent);
+                text-wrap: pretty;
+                margin: 0;
+              "
+            >
+              <span lang="it"
+                >Ho iniziato disegnando insegne per i negozi sotto casa e non ho
+                mai smesso di partire dalla matita. Mi piacciono i progetti in
+                cui si parla molto prima di aprire il computer: chi siete, chi
+                volete accanto, cosa non volete assolutamente sembrare. Lavoro
+                da solo, su pochi progetti alla volta, e vi tengo dentro ogni
+                passaggio.</span
+              ><span lang="en"
+                >I started by drawing signs for the shops on my street, and I
+                never stopped starting with a pencil. I like projects where we
+                talk a lot before opening the computer: who you are, who you
+                want beside you, what you absolutely don't want to look like. I
+                work on my own, on a few projects at a time, and I keep you
+                inside every step.</span
+              ><span lang="de"
+                >Angefangen habe ich mit Schildern für die Läden in meiner
+                Straße, und ich beginne bis heute mit dem Bleistift. Ich mag
+                Projekte, bei denen viel gesprochen wird, bevor der Rechner
+                aufgeht: wer Sie sind, wen Sie an Ihrer Seite wollen, wonach Sie
+                auf keinen Fall aussehen möchten. Ich arbeite allein, an wenigen
+                Projekten gleichzeitig, und binde Sie in jeden Schritt
+                ein.</span
+              >
+            </p>
+          </div>
+          <div>
+            <img
+              src="assets/gabriele.png"
+              alt="Gabriele Alleruzzo"
+              style="display: block; width: 100%; height: auto"
+            />
+          </div>
+        </section>
+
+        <section
+          data-r="about-cols"
+          data-rev="1"
+          data-screen-label="Formazione"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            align-items: start;
+            border-top: 1px solid var(--color-divider);
+          "
+        >
+          <div>
+            <img
+              src="assets/abact-logo.png"
+              alt="Accademia di Belle Arti di Catania"
+              style="
+                display: block;
+                width: 80%;
+                height: auto;
+                position: static;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            />
+          </div>
+          <div>
+            <h6 style="color: var(--color-accent-700); margin-bottom: 16px">
+              <span lang="it">Formazione</span><span lang="en">Education</span
+              ><span lang="de">Ausbildung</span>
+            </h6>
+            <h2
+              style="
+                font-size: clamp(30px, 3.6vw, 46px);
+                line-height: 1.02;
+                margin: 0 0 24px;
+              "
+            >
+              <span lang="it"
+                >Grafica editoriale all'Accademia di Belle Arti di
+                Catania.</span
+              ><span lang="en"
+                >Editorial design at the Academy of Fine Arts in Catania.</span
+              ><span lang="de"
+                >Editorial Design an der Akademie der Bildenden Künste in
+                Catania.</span
+              >
+            </h2>
+            <p
+              style="
+                font-size: 18px;
+                line-height: 1.65;
+                color: color-mix(in srgb, var(--color-text) 78%, transparent);
+                text-wrap: pretty;
+                margin: 0;
+              "
+            >
+              <span lang="it"
+                >Mi sono formato al corso di grafica editoriale dell'Accademia
+                di Belle Arti di Catania. Lì ho imparato a lavorare sulla
+                pagina: griglie, gerarchie, tipografia e stampa, con progetti
+                seguiti dalla prima gabbia fino al file esecutivo. È la base che
+                porto ancora dentro ogni identità che disegno.</span
+              ><span lang="en"
+                >I trained on the editorial design course at the Academy of Fine
+                Arts in Catania. There I learnt to work on the page: grids,
+                hierarchies, typography and print, with projects followed from
+                the first layout grid through to the press-ready file. It is the
+                foundation I still carry into every identity I design.</span
+              ><span lang="de"
+                >Ausgebildet wurde ich im Studiengang Editorial Design an der
+                Akademie der Bildenden Künste in Catania. Dort habe ich gelernt,
+                an der Seite zu arbeiten: Raster, Hierarchien, Typografie und
+                Druck, mit Projekten vom ersten Satzspiegel bis zur Druckdatei.
+                Diese Grundlage trage ich bis heute in jede Identität, die ich
+                gestalte.</span
+              >
+            </p>
+          </div>
+        </section>
+
+        <section
+          data-r="about-cols"
+          data-screen-label="Professione"
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            align-items: start;
+            border-top: 1px solid var(--color-divider);
+          "
+        >
+          <div>
+            <h6 style="color: var(--color-accent-700); margin-bottom: 16px">
+              <span lang="it">Professione</span><span lang="en">Practice</span
+              ><span lang="de">Beruf</span>
+            </h6>
+            <h2
+              style="
+                font-size: clamp(30px, 3.6vw, 46px);
+                line-height: 1.02;
+                margin: 0 0 24px;
+              "
+            >
+              <span lang="it"
+                >Marchi, logotipi e identità visive per il digitale e per la
+                stampa.</span
+              ><span lang="en"
+                >Marks, logotypes and visual identities for digital and for
+                print.</span
+              ><span lang="de"
+                >Marken, Logotypen und visuelle Identitäten für Digital und
+                Druck.</span
+              >
+            </h2>
+            <p
+              style="
+                font-size: 18px;
+                line-height: 1.65;
+                color: color-mix(in srgb, var(--color-text) 78%, transparent);
+                text-wrap: pretty;
+                margin: 0;
+              "
+            >
+              <span lang="it"
+                >Disegno marchi, logotipi e sistemi di identità visiva, e li
+                porto su tutti i supporti: canali digitali, contenuti social e
+                stampati. Mi occupo degli elaborati grafici e fotografici che ne
+                fanno parte, dall'editing alla post produzione delle
+                immagini.</span
+              ><span lang="en"
+                >I design marks, logotypes and visual identity systems, and
+                carry them across every medium: digital channels, social content
+                and print. I take care of the graphic and photographic material
+                that goes with them, from image editing to
+                post-production.</span
+              ><span lang="de"
+                >Ich gestalte Marken, Logotypen und visuelle Identitätssysteme
+                und bringe sie auf alle Medien: digitale Kanäle,
+                Social-Media-Inhalte und Druck. Dazu gehören die grafischen und
+                fotografischen Arbeiten, vom Bildbearbeiten bis zur
+                Postproduktion.</span
+              >
+            </p>
+          </div>
+          <div>
+            <img
+              src="assets/mef-at-work-v2.jpg"
+              alt="Gabriele al lavoro"
+              style="display: block; width: 100%; height: auto"
+            />
+          </div>
+        </section>
+
+        <footer
+          style="border-top: 1px solid var(--color-divider); margin-top: auto"
+        >
+          <div
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 22px 32px;
+              display: flex;
+              gap: 24px;
+              flex-wrap: wrap;
+              font-family: var(--font-heading);
+              font-size: 12px;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              color: color-mix(in srgb, var(--color-text) 55%, transparent);
+            "
+          >
+            <span>Gabriele Alleruzzo</span>
+            <span style="margin-left: auto"
+              ><span lang="it">Logo · Identità · Social</span
+              ><span lang="en">Logo · Identity · Social</span
+              ><span lang="de">Logo · Identität · Social</span></span
+            >
+            <span>© 2026</span>
+          </div>
+        </footer>
       </div>
-    </div>
-    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <nav data-r="menu-panel" style="border-top: 1px solid var(--color-divider); background: var(--color-bg); display: flex; align-items: center; justify-content: center; gap: 34px; padding: 18px 24px; font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;">
-        <a href="Portfolio Home.dc.html" style="color: #30333E;"><span lang="it">Home</span><span lang="en">Home</span><span lang="de">Home</span></a>
-        <a href="About.dc.html" style="color: #30333E;"><span lang="it">Su di me</span><span lang="en">About</span><span lang="de">Über mich</span></a>
-        <a href="Progetti.dc.html" style="color: #30333E;"><span lang="it">Progetti</span><span lang="en">Projects</span><span lang="de">Projekte</span></a>
-        <a href="Contatti.dc.html" style="color: #30333E;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></a>
-      </nav>
-    </sc-if>
-  </header>
-
-  <section data-r="about-cols" data-screen-label="About" style="max-width: 1180px; margin: 0 auto; display: grid; align-items: start;">
-    <div>
-      <h6 style="color: var(--color-accent-700); margin-bottom: 16px;"><span lang="it">Su di me</span><span lang="en">About me</span><span lang="de">Über mich</span></h6>
-      <h1 style="font-size: clamp(38px, 5vw, 64px); line-height: 1; margin: 0 0 24px;">
-        <span lang="it">Dieci anni di marchi disegnati a mano e finiti in vettoriale.</span><span lang="en">Ten years of marks drawn by hand and finished in vectors.</span><span lang="de">Zehn Jahre Zeichen, von Hand gezeichnet und in Vektoren fertiggestellt.</span>
-      </h1>
-      <p style="font-size: 18px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty; margin: 0;">
-        <span lang="it">Ho iniziato disegnando insegne per i negozi sotto casa e non ho mai smesso di partire dalla matita. Mi piacciono i progetti in cui si parla molto prima di aprire il computer: chi siete, chi volete accanto, cosa non volete assolutamente sembrare. Lavoro da solo, su pochi progetti alla volta, e vi tengo dentro ogni passaggio.</span><span lang="en">I started by drawing signs for the shops on my street, and I never stopped starting with a pencil. I like projects where we talk a lot before opening the computer: who you are, who you want beside you, what you absolutely don't want to look like. I work on my own, on a few projects at a time, and I keep you inside every step.</span><span lang="de">Angefangen habe ich mit Schildern für die Läden in meiner Straße, und ich beginne bis heute mit dem Bleistift. Ich mag Projekte, bei denen viel gesprochen wird, bevor der Rechner aufgeht: wer Sie sind, wen Sie an Ihrer Seite wollen, wonach Sie auf keinen Fall aussehen möchten. Ich arbeite allein, an wenigen Projekten gleichzeitig, und binde Sie in jeden Schritt ein.</span>
-      </p>
-    </div>
-    <div>
-      <img src="assets/gabriele.png" alt="Gabriele Alleruzzo" style="display: block; width: 100%; height: auto;">
-    </div>
-  </section>
-
-  <section data-r="about-cols" data-rev="1" data-screen-label="Formazione" style="max-width: 1180px; margin: 0 auto; display: grid; align-items: start; border-top: 1px solid var(--color-divider);">
-    <div>
-      <img src="assets/abact-logo.png" alt="Accademia di Belle Arti di Catania" style="display: block; width: 80%; height: auto; position: static; margin-left: auto; margin-right: auto">
-    </div>
-    <div>
-      <h6 style="color: var(--color-accent-700); margin-bottom: 16px;"><span lang="it">Formazione</span><span lang="en">Education</span><span lang="de">Ausbildung</span></h6>
-      <h2 style="font-size: clamp(30px, 3.6vw, 46px); line-height: 1.02; margin: 0 0 24px;">
-        <span lang="it">Grafica editoriale all'Accademia di Belle Arti di Catania.</span><span lang="en">Editorial design at the Academy of Fine Arts in Catania.</span><span lang="de">Editorial Design an der Akademie der Bildenden Künste in Catania.</span>
-      </h2>
-      <p style="font-size: 18px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty; margin: 0;">
-        <span lang="it">Mi sono formato al corso di grafica editoriale dell'Accademia di Belle Arti di Catania. Lì ho imparato a lavorare sulla pagina: griglie, gerarchie, tipografia e stampa, con progetti seguiti dalla prima gabbia fino al file esecutivo. È la base che porto ancora dentro ogni identità che disegno.</span><span lang="en">I trained on the editorial design course at the Academy of Fine Arts in Catania. There I learnt to work on the page: grids, hierarchies, typography and print, with projects followed from the first layout grid through to the press-ready file. It is the foundation I still carry into every identity I design.</span><span lang="de">Ausgebildet wurde ich im Studiengang Editorial Design an der Akademie der Bildenden Künste in Catania. Dort habe ich gelernt, an der Seite zu arbeiten: Raster, Hierarchien, Typografie und Druck, mit Projekten vom ersten Satzspiegel bis zur Druckdatei. Diese Grundlage trage ich bis heute in jede Identität, die ich gestalte.</span>
-      </p>
-    </div>
-  </section>
-
-  <section data-r="about-cols" data-screen-label="Professione" style="max-width: 1180px; margin: 0 auto; display: grid; align-items: start; border-top: 1px solid var(--color-divider);">
-    <div>
-      <h6 style="color: var(--color-accent-700); margin-bottom: 16px;"><span lang="it">Professione</span><span lang="en">Practice</span><span lang="de">Beruf</span></h6>
-      <h2 style="font-size: clamp(30px, 3.6vw, 46px); line-height: 1.02; margin: 0 0 24px;">
-        <span lang="it">Marchi, logotipi e identità visive per il digitale e per la stampa.</span><span lang="en">Marks, logotypes and visual identities for digital and for print.</span><span lang="de">Marken, Logotypen und visuelle Identitäten für Digital und Druck.</span>
-      </h2>
-      <p style="font-size: 18px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty; margin: 0;">
-        <span lang="it">Disegno marchi, logotipi e sistemi di identità visiva, e li porto su tutti i supporti: canali digitali, contenuti social e stampati. Mi occupo degli elaborati grafici e fotografici che ne fanno parte, dall'editing alla post produzione delle immagini.</span><span lang="en">I design marks, logotypes and visual identity systems, and carry them across every medium: digital channels, social content and print. I take care of the graphic and photographic material that goes with them, from image editing to post-production.</span><span lang="de">Ich gestalte Marken, Logotypen und visuelle Identitätssysteme und bringe sie auf alle Medien: digitale Kanäle, Social-Media-Inhalte und Druck. Dazu gehören die grafischen und fotografischen Arbeiten, vom Bildbearbeiten bis zur Postproduktion.</span>
-      </p>
-    </div>
-    <div>
-      <img src="assets/mef-at-work-v2.jpg" alt="Gabriele al lavoro" style="display: block; width: 100%; height: auto;">
-    </div>
-  </section>
-
-  <footer style="border-top: 1px solid var(--color-divider); margin-top: auto;">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 22px 32px; display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">
-      <span>Gabriele Alleruzzo</span>
-      <span style="margin-left: auto;"><span lang="it">Logo · Identità · Social</span><span lang="en">Logo · Identity · Social</span><span lang="de">Logo · Identität · Social</span></span>
-      <span>© 2026</span>
-    </div>
-  </footer>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { menuOpen: false };
-  componentDidMount() {
-    document.documentElement.setAttribute('data-lang', localStorage.getItem('ga-portfolio-lang') || 'it');
-  }
-  applyLang(lang) {
-    document.documentElement.setAttribute('data-lang', lang);
-    try { localStorage.setItem('ga-portfolio-lang', lang); } catch (e) {}
-    this.forceUpdate();
-  }
-  renderVals() {
-    return {
-      menuOpen: !!this.state.menuOpen,
-      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
-      closeMenu: () => this.setState({ menuOpen: false }),
-      setIt: () => this.applyLang('it'),
-      setEn: () => this.applyLang('en'),
-      setDe: () => this.applyLang('de')
-    };
-  }
-}
-</script>
-</body>
+    </x-dc>
+    <script type="text/x-dc" data-dc-script>
+      class Component extends DCLogic {
+        state = { menuOpen: false };
+        componentDidMount() {
+          document.documentElement.setAttribute('data-lang', localStorage.getItem('ga-portfolio-lang') || 'it');
+        }
+        applyLang(lang) {
+          document.documentElement.setAttribute('data-lang', lang);
+          try { localStorage.setItem('ga-portfolio-lang', lang); } catch (e) {}
+          this.forceUpdate();
+        }
+        renderVals() {
+          return {
+            menuOpen: !!this.state.menuOpen,
+            toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+            closeMenu: () => this.setState({ menuOpen: false }),
+            setIt: () => this.applyLang('it'),
+            setEn: () => this.applyLang('en'),
+            setDe: () => this.applyLang('de')
+          };
+        }
+      }
+    </script>
+  </body>
 </html>
