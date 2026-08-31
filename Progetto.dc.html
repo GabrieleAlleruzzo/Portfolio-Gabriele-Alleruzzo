@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/styles.css">
+<script src="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #F4F5F7;
+    --color-surface: #E7E9EE;
+    --color-text: #30333E;
+    --color-accent: #38486C;
+    --color-accent-2: #5F6371;
+    --color-divider: color-mix(in srgb, #30333E 18%, transparent);
+    --color-accent-100: #EEF0F4;
+    --color-accent-200: #DFE2E9;
+    --color-accent-300: #C6CBD6;
+    --color-accent-400: #979EAB;
+    --color-accent-500: #737B8D;
+    --color-accent-600: #4A5A7E;
+    --color-accent-700: #38486C;
+    --color-accent-800: #30333E;
+    --color-accent-900: #23262E;
+    --color-accent-2-100: #EFF0F2;
+    --color-accent-2-200: #DEE0E4;
+    --color-accent-2-300: #C4C7CE;
+    --color-accent-2-400: #979EAB;
+    --color-accent-2-500: #7A7F8C;
+    --color-accent-2-600: #5F6371;
+    --color-accent-2-700: #4A4E5A;
+    --color-accent-2-800: #30333E;
+    --color-accent-2-900: #23262E;
+    --color-neutral-100: #F4F5F7;
+    --color-neutral-200: #E7E9EE;
+    --color-neutral-300: #D3D6DD;
+    --color-neutral-400: #B4B8C2;
+    --color-neutral-500: #979EAB;
+    --color-neutral-600: #787E8B;
+    --color-neutral-700: #5F6371;
+    --color-neutral-800: #42454F;
+    --color-neutral-900: #30333E;
+  }
+  html { scroll-behavior: smooth; }
+  [data-r="nav-inline"] { display: flex; margin-left: auto; }
+  [data-r="menu-btn"] { display: none; margin-left: auto; }
+  @media (max-width: 1024px) {
+    [data-r="nav-inline"] { display: none; }
+    [data-r="menu-btn"] { display: flex; }
+  }
+  .btn { transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; }
+  .btn:hover { transform: scale(1.05); }
+  .btn-primary, .btn-primary:hover, .btn-primary:active { color: #FFFFFF; }
+  .btn-primary:hover { border-color: #FFFFFF; }
+  @keyframes ga-drop { from { opacity: 0; transform: translateY(-10px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); } }
+  [data-r="menu-panel"] { animation: ga-drop 0.28s cubic-bezier(0.2, 0.7, 0.3, 1); transform-origin: top center; }
+  body { margin: 0; }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent-900); }
+  [data-r="header-bar"] { padding: 14px 32px; gap: 32px; }
+  [data-r="layout"] { grid-template-columns: 2fr 4fr; gap: 48px; padding: 56px 32px 72px; }
+  [data-r="info"] { position: sticky; top: 84px; align-self: start; }
+  @media (max-width: 900px) {
+    [data-r="header-bar"] { padding: 12px 24px; gap: 18px; }
+    [data-r="header-bar"] nav { gap: 18px; }
+    [data-r="layout"] { grid-template-columns: 2fr 4fr; gap: 32px; padding: 48px 24px 56px; }
+  }
+  @media (max-width: 768px) {
+    [data-r="layout"] { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px 48px; }
+    [data-r="info"] { position: static; width: 100%; max-width: 100%; }
+    [data-r="header-bar"] { padding: 12px 20px; gap: 14px; flex-wrap: wrap; }
+    [data-r="header-bar"] nav { gap: 14px; font-size: 13px; }
+  }
+  @media (max-width: 576px) {
+    [data-r="menu-panel"] { flex-direction: column; gap: 14px; }
+  }
+  #lang-it, #lang-en, #lang-de { background: transparent; color: #30333E; }
+  html:not([data-lang]) #lang-it, html[data-lang="it"] #lang-it, html[data-lang="en"] #lang-en, html[data-lang="de"] #lang-de { background: #30333E; color: var(--color-bg); }
+  [lang="it"], [lang="en"], [lang="de"] { display: none; }
+  html:not([data-lang]) [lang="it"], html[data-lang="it"] [lang="it"], html[data-lang="en"] [lang="en"], html[data-lang="de"] [lang="de"] { display: inline; }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <header style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-divider);">
+    <div data-r="header-bar" style="max-width: 1180px; margin: 0 auto; display: flex; align-items: center;">
+      <a href="Portfolio Home.dc.html" style="display: flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-weight: 700; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; color: #30333E;">
+        <img src="assets/logo-mark.png" alt="Gabriele Alleruzzo" style="height: 34px; width: auto;">
+        Gabriele Alleruzzo
+      </a>
+      <nav data-r="nav-inline" style="align-items: center; gap: 26px; font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;">
+        <a href="Portfolio Home.dc.html" style="color: #30333E;"><span lang="it">Home</span><span lang="en">Home</span><span lang="de">Home</span></a>
+        <a href="About.dc.html" style="color: #30333E;"><span lang="it">Su di me</span><span lang="en">About</span><span lang="de">Über mich</span></a>
+        <a href="Progetti.dc.html" style="color: #30333E;"><span lang="it">Progetti</span><span lang="en">Projects</span><span lang="de">Projekte</span></a>
+        <a href="Contatti.dc.html" style="color: #30333E;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></a>
+      </nav>
+      <button data-r="menu-btn" type="button" aria-label="Menu" onClick="{{ toggleMenu }}" style="flex-direction: column; justify-content: center; gap: 5px; width: 30px; height: 27px; padding: 0; background: transparent; border: 0; cursor: pointer;">
+        <span style="display: block; height: 1.5px; background: #30333E;"></span>
+        <span style="display: block; height: 1.5px; background: #30333E;"></span>
+        <span style="display: block; height: 1.5px; background: #30333E;"></span>
+      </button>
+      <div style="display: flex; border: 1px solid var(--color-divider); font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.1em;">
+        <button id="lang-it" type="button" onClick="{{ setIt }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit;">IT</button>
+        <button id="lang-en" type="button" onClick="{{ setEn }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit; border-left: 1px solid var(--color-divider);">EN</button>
+        <button id="lang-de" type="button" onClick="{{ setDe }}" style="border: 0; padding: 5px 9px; cursor: pointer; font: inherit; border-left: 1px solid var(--color-divider);">DE</button>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav data-r="menu-panel" style="border-top: 1px solid var(--color-divider); background: var(--color-bg); display: flex; align-items: center; justify-content: center; gap: 34px; padding: 18px 24px; font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase;">
+        <a href="Portfolio Home.dc.html" style="color: #30333E;"><span lang="it">Home</span><span lang="en">Home</span><span lang="de">Home</span></a>
+        <a href="About.dc.html" style="color: #30333E;"><span lang="it">Su di me</span><span lang="en">About</span><span lang="de">Über mich</span></a>
+        <a href="Progetti.dc.html" style="color: #30333E;"><span lang="it">Progetti</span><span lang="en">Projects</span><span lang="de">Projekte</span></a>
+        <a href="Contatti.dc.html" style="color: #30333E;"><span lang="it">Contatti</span><span lang="en">Contacts</span><span lang="de">Kontakt</span></a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <div data-r="layout" data-screen-label="Project detail" style="max-width: 1180px; margin: 0 auto; display: grid; align-items: start;">
+
+    <div data-r="info">
+      <a href="Progetti.dc.html" style="display: inline-block; margin-bottom: 22px; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">
+        <span lang="it">← Tutti i progetti</span><span lang="en">← All projects</span><span lang="de">← Alle Projekte</span>
+      </a>
+      <h1 style="font-size: clamp(34px, 4.4vw, 52px); line-height: 1; margin: 0 0 20px;">{{ nomeProgetto }}</h1>
+
+      <sc-for list="{{ paragrafi }}" as="p" hint-placeholder-count="2">
+        <p style="font-size: 17px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 78%, transparent); text-wrap: pretty; margin: 0 0 14px;">{{ p.text }}</p>
+      </sc-for>
+
+      <sc-if value="{{ hasServizi }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top: 26px;">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin-bottom: 8px;">
+            <span lang="it">Servizi</span><span lang="en">Services</span><span lang="de">Leistungen</span>
+          </div>
+          <ul style="margin: 0; padding-left: 18px; display: grid; gap: 4px;">
+            <sc-for list="{{ servizi }}" as="s" hint-placeholder-count="3">
+              <li style="font-size: 16px;">{{ s.label }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasMeta }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-wrap: wrap; gap: 32px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--color-divider);">
+          <sc-if value="{{ presso }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">
+                <span lang="it">Presso</span><span lang="en">At</span><span lang="de">Bei</span>
+              </div>
+              <div style="font-size: 17px;">{{ presso }}</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ anno }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">
+                <span lang="it">Anno</span><span lang="en">Year</span><span lang="de">Jahr</span>
+              </div>
+              <div style="font-size: 17px;">{{ anno }}</div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasSocial }}" hint-placeholder-val="{{ true }}">
+        <div style="margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--color-divider);">
+          <div style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin-bottom: 10px;">
+            <span lang="it">Canali</span><span lang="en">Channels</span><span lang="de">Kanäle</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <sc-if value="{{ facebook }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ facebook }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; font-size: 16px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                Facebook
+              </a>
+            </sc-if>
+            <sc-if value="{{ instagram }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ instagram }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; font-size: 16px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37"/><path d="M17.5 6.5h.01"/></svg>
+                Instagram
+              </a>
+            </sc-if>
+            <sc-if value="{{ linkedin }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ linkedin }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; font-size: 16px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="display: grid; gap: 0; width: 100%;">
+      <sc-for list="{{ immagini }}" as="im" hint-placeholder-count="3">
+        <button type="button" onClick="{{ im.open }}" style="display: block; padding: 0; border: 0; background: transparent; cursor: zoom-in; width: 100%;">
+          <img src="{{ im.src }}" alt="{{ im.alt }}" style="display: block; width: 100%; height: auto;">
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position: fixed; inset: 0; z-index: 60; background: rgba(15, 18, 22, 0.92); display: flex; align-items: center; justify-content: center; padding: 40px;">
+      <button type="button" onClick="{{ prevImage }}" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #fff; cursor: pointer;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <img src="{{ lightboxSrc }}" alt="{{ lightboxAlt }}" style="max-width: min(1100px, 90vw); max-height: 86vh; width: auto; height: auto; display: block;">
+      <button type="button" onClick="{{ nextImage }}" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #fff; cursor: pointer;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <button type="button" onClick="{{ closeLightbox }}" style="position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255,255,255,0.4); color: #fff; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div style="position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,0.75); font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.14em;">{{ lightboxCounter }}</div>
+    </div>
+  </sc-if>
+
+  <footer style="border-top: 1px solid var(--color-divider); margin-top: auto;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 22px 32px; display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 55%, transparent);">
+      <span>Gabriele Alleruzzo</span>
+      <span style="margin-left: auto;"><span lang="it">Logo · Identità · Social</span><span lang="en">Logo · Identity · Social</span><span lang="de">Logo · Identität · Social</span></span>
+      <span>© 2026</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;slug&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;startfound&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenuto&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, data: null, lang: 'it', lightbox: -1 };
+
+  componentDidMount() {
+    const lang = localStorage.getItem('ga-portfolio-lang') || 'it';
+    document.documentElement.setAttribute('data-lang', lang);
+    this.setState({ lang });
+    const slug = new URLSearchParams(location.search).get('p') || this.props.slug || 'startfound';
+    fetch('projects/' + slug + '.json')
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(data => this.setState({ data }))
+      .catch(() => this.setState({ data: null }));
+    this._onKey = (e) => {
+      if (this.state.lightbox < 0) return;
+      if (e.key === 'Escape') this.close();
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this._onKey);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._onKey); }
+
+  applyLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    try { localStorage.setItem('ga-portfolio-lang', lang); } catch (e) {}
+    this.setState({ lang });
+  }
+  images() {
+    const d = this.state.data || {};
+    return ['img_cover', 'img_01', 'img_02', 'img_03', 'img_04']
+      .map(k => d[k]).filter(src => !!src);
+  }
+  step(dir) {
+    const n = this.images().length;
+    if (!n) return;
+    this.setState(s => ({ lightbox: (s.lightbox + dir + n) % n }));
+  }
+  close() { this.setState({ lightbox: -1 }); }
+
+  renderVals() {
+    const d = this.state.data || {};
+    const lang = this.state.lang;
+    const pick = (v) => (v && typeof v === 'object') ? (v[lang] || v.it || v.en) : v;
+    const desc = pick(d.descrizioneProgetto) || '';
+    const servizi = (pick(d.servizi) || []).filter(Boolean);
+    const imgs = this.images();
+    const name = d.nomeProgetto || '';
+    const i = this.state.lightbox;
+    return {
+      menuOpen: !!this.state.menuOpen,
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      setIt: () => this.applyLang('it'),
+      setEn: () => this.applyLang('en'),
+      setDe: () => this.applyLang('de'),
+      nomeProgetto: name,
+      paragrafi: desc.split('\n').map(t => t.trim()).filter(Boolean).map((text, k) => ({ text, key: k })),
+      servizi: servizi.map((label, k) => ({ label, key: k })),
+      hasServizi: servizi.length > 0,
+      presso: d.presso || '',
+      anno: d.anno || '',
+      hasMeta: !!(d.presso || d.anno),
+      facebook: (d.social || {}).facebook || '',
+      instagram: (d.social || {}).instagram || '',
+      linkedin: (d.social || {}).linkedin || '',
+      hasSocial: !!((d.social || {}).facebook || (d.social || {}).instagram || (d.social || {}).linkedin),
+      immagini: imgs.map((src, k) => ({ src, key: k, alt: name + ' — ' + (k + 1), open: () => this.setState({ lightbox: k }) })),
+      lightboxOpen: i >= 0 && i < imgs.length,
+      lightboxSrc: imgs[i] || '',
+      lightboxAlt: name,
+      lightboxCounter: imgs.length ? (i + 1) + ' / ' + imgs.length : '',
+      prevImage: (e) => { e.stopPropagation(); this.step(-1); },
+      nextImage: (e) => { e.stopPropagation(); this.step(1); },
+      closeLightbox: () => this.close()
+    };
+  }
+}
+</script>
+</body>
+</html>

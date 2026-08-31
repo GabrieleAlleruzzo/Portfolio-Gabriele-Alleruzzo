@@ -1,0 +1,33 @@
+{
+  "id": "002",
+  "slug": "storica",
+  "nomeProgetto": "Storica Assicurazioni 1832",
+  "descrizioneProgetto": {
+    "it": "Progetto di brand identity — Storica\n\nStorica è un'agenzia assicurativa di Messina attiva dal 1832. L'identità recupera i simboli della città — la Madonnina del porto e la pigna della fontana — e li porta in un marchio essenziale, accompagnato da una palette rosso e grigio antracite e dal carattere Aleo.",
+    "en": "Brand identity project — Storica\n\nStorica is an insurance agency in Messina, active since 1832. The identity draws on the city's own symbols — the harbour Madonnina and the fountain's pine cone — and turns them into an essential mark, paired with a red and charcoal palette and the Aleo typeface."
+  },
+  "servizi": {
+    "it": [
+      "Logo design",
+      "Brand identity",
+      "Contenuti social"
+    ],
+    "en": [
+      "Logo design",
+      "Brand identity",
+      "Social contents"
+    ]
+  },
+  "anno": "2021",
+  "presso": "Mind Lab Srl",
+  "img_cover": "assets/projects/storica/cover.png",
+  "img_01": "assets/projects/storica/01-mood.png",
+  "img_02": "assets/projects/storica/03.png",
+  "img_03": "",
+  "img_04": "",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  }
+}

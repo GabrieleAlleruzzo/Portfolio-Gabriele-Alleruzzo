@@ -1,0 +1,25 @@
+{
+  "id": "001",
+  "slug": "Startfound",
+  "nomeProgetto": "Startfound",
+  "descrizioneProgetto": {
+    "it": "Progetto di brand identity — Startfound\n\nStartfound è un'agenzia di consulenza finanziaria specializzata nel settore dell'ecosostenibilità con sede a Messina, essa aiuta privati e aziende a fare la scelta giusta per un futuro più verde offrendo servizi d'installazione di pannelli solari, noleggio auto elettriche, consulenza energetica, formazione e informazione.",
+    "en": "Brand identity project — Startfound\n\nStartfound is a financial consulting agency specialising in environmental sustainability, based in Messina. It helps individuals and companies make the right choice for a greener future, offering solar panel installation, electric car rental, energy consulting, training and information services."
+  },
+  "servizi": {
+    "it": ["Logo design", "Merchandise", "Contenuti social"],
+    "en": ["Logo design", "Merchandise", "Social contents"]
+  },
+  "anno": "2021",
+  "presso": "Mind Lab Srl",
+  "img_cover": "assets/projects/startfound/cover.png",
+  "img_01": "assets/projects/startfound/01.jpg",
+  "img_02": "assets/projects/startfound/02.png",
+  "img_03": "assets/projects/startfound/03.jpg",
+  "img_04": "",
+  "social": {
+    "facebook": "https://www.facebook.com/startfoundsrl",
+    "instagram": "https://www.instagram.com/startfoundsrl/",
+    "linkedin": "https://www.linkedin.com/company/startfound-srl/"
+  }
+}

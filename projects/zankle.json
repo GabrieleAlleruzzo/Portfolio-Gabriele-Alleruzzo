@@ -1,0 +1,33 @@
+{
+  "id": "003",
+  "slug": "zankle",
+  "nomeProgetto": "Zankle Birrificio Artiginale",
+  "descrizioneProgetto": {
+    "it": "Progetto di brand identity — Zankle Birrificio Artigianale\n\nZankle è l'unico birrificio artigianale della città di Messina, produttore delle birre Scilla e Cariddi. Il mood, cosi come il marchio e le birre, sono fortemente ispirati alle leggende dello Stretto di Messina con l'obiettivo di raccontare e valorizzare i miti e la cultura del territorio.\n\nDi particolare rilevanza è stata la Statua del Nettuno sita a Messina in Via Garibaldi, è stata il punto di partenza per lo sviluppo dell'identità visiva del birrificio, poiché, ritrae Nettuno, Scilla e Cariddi nelle loro iconiche pose.",
+    "en": "Brand identity project — Zankle Birrificio Artigianale\n\nZankle is the only craft brewery in the city of Messina, producer of the Scilla and Cariddi beers. The mood, like the mark and the beers themselves, is strongly inspired by the legends of the Strait of Messina, with the aim of telling and giving value to the myths and the culture of the territory.\n\nOf particular relevance was the Statue of Neptune in Via Garibaldi, Messina: it was the starting point for the development of the brewery's visual identity, as it portrays Neptune, Scilla and Cariddi in their iconic poses."
+  },
+  "servizi": {
+    "it": [
+      "Logo design",
+      "Brand identity",
+      "Packaging"
+    ],
+    "en": [
+      "Logo design",
+      "Brand identity",
+      "Packaging"
+    ]
+  },
+  "anno": "2020",
+  "presso": "Messina",
+  "img_cover": "assets/projects/zankle/cover.png",
+  "img_01": "assets/projects/zankle/01.png",
+  "img_02": "assets/projects/zankle/02.png",
+  "img_03": "assets/projects/zankle/03.png",
+  "img_04": "",
+  "social": {
+    "facebook": "https://www.facebook.com/BirrificioZankle",
+    "instagram": "https://www.instagram.com/birrificiozankle/",
+    "linkedin": ""
+  }
+}

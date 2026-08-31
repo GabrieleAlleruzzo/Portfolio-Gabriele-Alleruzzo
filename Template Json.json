@@ -1,0 +1,25 @@
+{
+  "id": "",
+  "slug": "nome-progetto",
+  "nomeProgetto": "Nome progetto",
+  "descrizioneProgetto": {
+    "it": "Descrizione del progetto in italiano.",
+    "en": "Project description in English."
+  },
+  "servizi": {
+    "it": ["Logo design", "Brand identity", "Contenuti social"],
+    "en": ["Logo design", "Brand identity", "Social contents"]
+  },
+  "anno": "2025",
+  "presso": "Nome studio / cliente",
+  "img_cover": "",
+  "img_01": "",
+  "img_02": "",
+  "img_03": "",
+  "img_04": "",
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  }
+}

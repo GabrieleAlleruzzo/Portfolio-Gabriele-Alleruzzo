@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/styles.css">
+<script src="_ds/industry-ceb3520c-e644-41d1-8d97-2f0e783437a5/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #F4F5F7;
+    --color-surface: #E7E9EE;
+    --color-text: #30333E;
+    --color-accent: #38486C;
+    --color-accent-2: #5F6371;
+    --color-divider: color-mix(in srgb, #30333E 18%, transparent);
+    --color-accent-100: #EEF0F4;
+    --color-accent-200: #DFE2E9;
+    --color-accent-300: #C6CBD6;
+    --color-accent-400: #979EAB;
+    --color-accent-500: #737B8D;
+    --color-accent-600: #4A5A7E;
+    --color-accent-700: #38486C;
+    --color-accent-800: #30333E;
+    --color-accent-900: #23262E;
+    --color-accent-2-100: #EFF0F2;
+    --color-accent-2-200: #DEE0E4;
+    --color-accent-2-300: #C4C7CE;
+    --color-accent-2-400: #979EAB;
+    --color-accent-2-500: #7A7F8C;
+    --color-accent-2-600: #5F6371;
+    --color-accent-2-700: #4A4E5A;
+    --color-accent-2-800: #30333E;
+    --color-accent-2-900: #23262E;
+    --color-neutral-100: #F4F5F7;
+    --color-neutral-200: #E7E9EE;
+    --color-neutral-300: #D3D6DD;
+    --color-neutral-400: #B4B8C2;
+    --color-neutral-500: #979EAB;
+    --color-neutral-600: #787E8B;
+    --color-neutral-700: #5F6371;
+    --color-neutral-800: #42454F;
+    --color-neutral-900: #30333E;
+  }
+  @keyframes ga-spin { to { transform: rotate(360deg); } }
+  @keyframes ga-slot-card { 0% { transform: translateY(1em); opacity: 0; } 60% { transform: translateY(-0.06em); opacity: 1; } 100% { transform: translateY(0); opacity: 1; } }
+  [lang="it"], [lang="en"], [lang="de"] { display: none; }
+  html:not([data-lang]) [lang="it"], html[data-lang="it"] [lang="it"], html[data-lang="en"] [lang="en"], html[data-lang="de"] [lang="de"] { display: inline; }
+</style>
+</helmet>
+
+<a class="blueprint" href="{{ href }}" style="display: flex; flex-direction: column; height: 100%; padding: 0; color: var(--color-text); background: var(--color-bg); transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1), box-shadow 0.35s ease; transform-origin: center;" style-hover="transform: scale(1.05); z-index: 5; position: relative; box-shadow: var(--shadow-md)">
+  <div style="position: relative; width: 100%; aspect-ratio: 3 / 4; overflow: hidden; background: var(--color-accent-100);">
+    <sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+      <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+        <img src="assets/logo-mark.png" alt="" style="width: 44px; height: auto; opacity: 0.55; animation: ga-spin 1.1s linear infinite;">
+      </div>
+    </sc-if>
+    <img src="{{ img }}" alt="{{ title }}" onLoad="{{ onLoad }}" style="{{ imgStyle }}">
+  </div>
+  <div style="padding: 14px 14px 16px; flex: 1;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent); min-height: 18px;">
+      <span>{{ servizio }}</span><span>{{ anno }}</span>
+    </div>
+    <h3 style="margin: 6px 0 4px; font-size: 26px;">{{ title }}</h3>
+    <p style="margin: 0; color: color-mix(in srgb, var(--color-text) 70%, transparent);">
+      <span lang="it">{{ descIt }}</span><span lang="en">{{ descEn }}</span><span lang="de">{{ descDe }}</span>
+    </p>
+  </div>
+</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:360,&quot;height&quot;:560},&quot;href&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;img&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Nome progetto&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;anno&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2025&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;serviziIt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Logo design, Brand identity&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;serviziEn&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Logo design, Brand identity&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;serviziDe&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Logodesign, Markenidentität&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;descIt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;descEn&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;descDe&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0, lang: 'it', loaded: false };
+
+  componentDidMount() {
+    this.sync();
+    if (this.props.img) {
+      const pre = new Image();
+      pre.onload = pre.onerror = () => this.setState({ loaded: true });
+      pre.src = this.props.img;
+      if (pre.complete) this.setState({ loaded: true });
+    } else {
+      this.setState({ loaded: true });
+    }
+    this._obs = new MutationObserver(() => this.sync());
+    this._obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
+  }
+  componentWillUnmount() {
+    if (this._obs) this._obs.disconnect();
+  }
+  sync() {
+    this.setState({ lang: document.documentElement.getAttribute('data-lang') || 'it' });
+  }
+  list(raw) {
+    return String(raw || '').split(',').map(s => s.trim()).filter(Boolean);
+  }
+  renderVals() {
+    const p = this.props;
+    const byLang = { it: this.list(p.serviziIt), en: this.list(p.serviziEn), de: this.list(p.serviziDe) };
+    const words = (byLang[this.state.lang] && byLang[this.state.lang].length) ? byLang[this.state.lang] : byLang.it;
+    const word = words.length ? words[0] : '';
+    return {
+      loading: !this.state.loaded,
+      onLoad: () => this.setState({ loaded: true }),
+      imgStyle: 'position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: ' + (this.state.loaded ? 1 : 0) + '; transition: opacity 0.35s ease;',
+      href: p.href || '#',
+      img: p.img || '',
+      title: p.title || '',
+      anno: p.anno || '',
+      descIt: p.descIt || '',
+      descEn: p.descEn || p.descIt || '',
+      descDe: p.descDe || p.descIt || '',
+      servizio: word
+    };
+  }
+}
+</script>
+</body>
+</html>
