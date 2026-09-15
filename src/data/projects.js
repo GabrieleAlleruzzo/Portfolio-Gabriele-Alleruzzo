@@ -54,10 +54,12 @@ export const projects = [
     servizi: {
       it: ["Logo design", "Brand identity", "Contenuti social"],
       en: ["Logo design", "Brand identity", "Social contents"],
+      de: ["Logodesign", "Markenidentität", "Social-Media-Inhalte"],
     },
     descrizioneProgetto: {
       it: "Progetto di brand identity — Storica\n\nStorica è un'agenzia assicurativa di Messina attiva dal 1832. L'identità recupera i simboli della città — la Madonnina del porto e la pigna della fontana — e li porta in un marchio essenziale, accompagnato da una palette rosso e grigio antracite e dal carattere Aleo.",
       en: "Brand identity project — Storica\n\nStorica is an insurance agency in Messina, active since 1832. The identity draws on the city's own symbols — the harbour Madonnina and the fountain's pine cone — and turns them into an essential mark, paired with a red and charcoal palette and the Aleo typeface.",
+      de: "Markenidentitätsprojekt — Storica\n\nStorica ist eine Versicherungsagentur in Messina, tätig seit 1832. Die Identität greift die Symbole der Stadt auf — die Madonnina des Hafens und den Pinienzapfen des Brunnens — und überträgt sie in ein wesentliches Markenzeichen, begleitet von einer rot-anthrazitfarbenen Palette und der Schriftart Aleo.",
     },
     social: {
       facebook: "",
