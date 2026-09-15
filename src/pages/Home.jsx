@@ -3,7 +3,11 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import Rotator from "../components/Rotator";
-import { LogoDesignIcon, BrandIdentityIcon, SocialContentsIcon } from "../components/Icons";
+import {
+  LogoDesignIcon,
+  BrandIdentityIcon,
+  SocialContentsIcon,
+} from "../components/Icons";
 import homeAbout from "../assets/home-about.png";
 
 const serviceIcons = [LogoDesignIcon, BrandIdentityIcon, SocialContentsIcon];
@@ -25,7 +29,12 @@ export default function Home() {
             <br />
             <Rotator words={t("home.heroRotator")} />
             <br />
-            {t("home.heroTitleSuffix")}
+            {t("home.heroTitleSuffix").map((line, i, arr) => (
+              <span key={line}>
+                {line}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ))}
           </h1>
           <p>{t("home.heroDesc")}</p>
           <div className="hero-actions">
@@ -47,7 +56,10 @@ export default function Home() {
             {services.map((service, i) => {
               const Icon = serviceIcons[i];
               return (
-                <article key={service.title} className="card blueprint service-card">
+                <article
+                  key={service.title}
+                  className="card blueprint service-card"
+                >
                   <div className="service-card-icon">
                     <Icon />
                   </div>
@@ -63,7 +75,9 @@ export default function Home() {
       <section id="projects" className="projects-section wrap section-pad">
         <div className="projects-heading">
           <h2>{t("home.projectsTitle")}</h2>
-          <Link to="/projects">{t("home.projectsAll")}</Link>
+          <Link className="project-link" to="/projects">
+            {t("home.projectsAll")}
+          </Link>
         </div>
         <div className="projects-grid">
           {featuredProjects.map((project) => (
@@ -75,7 +89,12 @@ export default function Home() {
       <section id="about" className="home-about">
         <div className="about-grid wrap">
           <div className="about-media">
-            <img src={homeAbout} alt="Gabriele Alleruzzo" width={1522} height={1015} />
+            <img
+              src={homeAbout}
+              alt="Gabriele Alleruzzo"
+              width={1522}
+              height={1015}
+            />
           </div>
           <div className="about-text">
             <h6>{t("home.aboutEyebrow")}</h6>
@@ -98,7 +117,10 @@ export default function Home() {
                 className="btn"
                 href="/Gabriele-Alleruzzo-CV.pdf"
                 download="Gabriele-Alleruzzo-CV.pdf"
-                style={{ color: "var(--color-neutral-100)", borderColor: "var(--color-bg)" }}
+                style={{
+                  color: "var(--color-neutral-100)",
+                  borderColor: "var(--color-bg)",
+                }}
               >
                 {t("home.aboutCta2")}
               </a>
@@ -116,7 +138,11 @@ export default function Home() {
           </div>
           <div className="card blueprint contact-card">
             <ContactSummary />
-            <Link className="btn btn-primary btn-block" to="/contact" style={{ marginTop: 26 }}>
+            <Link
+              className="btn btn-primary btn-block"
+              to="/contact"
+              style={{ marginTop: 26 }}
+            >
               {t("home.contactsCta")}
             </Link>
           </div>

@@ -46,7 +46,9 @@ img {
 }
 
 h6 {
-  font-size: 21px;
+  font-size: 16px;
+
+  text-transform: uppercase;
 }
 
 .site {
@@ -60,7 +62,7 @@ h6 {
 
 .wrap {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -271,7 +273,8 @@ h6 {
   align-items: stretch;
   justify-content: flex-start;
   text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  background: url("../assets/hero-illustration.png") right center / contain no-repeat;
+  background: url("../assets/hero-illustration.png") right center / contain
+    no-repeat;
 }
 
 .hero h1 {
@@ -541,6 +544,12 @@ h6 {
   }
   .about-text {
     order: 1;
+  }
+}
+
+@media (max-width: 425px) {
+  .project-link {
+    display: none;
   }
 }
 
@@ -922,7 +931,8 @@ h6 {
     background-image: none;
   }
   .hero-figure {
-    background: url("../assets/hero-illustration.png") right bottom / contain no-repeat;
+    background: url("../assets/hero-illustration.png") right bottom / contain
+      no-repeat;
     align-self: stretch;
   }
   .services-grid {
