@@ -55,6 +55,7 @@ img {
 }
 
 .wrap {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -405,6 +406,7 @@ img {
 .projects-grid {
   display: grid;
   align-items: stretch;
+  justify-items: stretch;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
@@ -419,6 +421,7 @@ img {
   display: flex;
   flex-direction: column;
   height: 100%;
+  aspect-ratio: 3 / 4;
   padding: 0;
   color: var(--color-text);
   background: var(--color-bg);
@@ -438,7 +441,8 @@ img {
 .project-card-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
   background: var(--color-accent-100);
 }
@@ -468,32 +472,17 @@ img {
   animation: ga-spin 1.1s linear infinite;
 }
 
-.project-card-body {
-  padding: 14px 14px 16px;
-  flex: 1;
-}
-
 .project-card-meta {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
+  padding: 10px 14px;
   font-family: var(--font-heading);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--color-text) 60%, transparent);
-  min-height: 18px;
-}
-
-.project-card-body h3 {
-  margin: 6px 0 4px;
-  font-size: 26px;
-}
-
-.project-card-body p {
-  margin: 0;
-  color: color-mix(in srgb, var(--color-text) 70%, transparent);
 }
 
 /* Home about band */

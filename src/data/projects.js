@@ -25,11 +25,6 @@ export const projects = [
       en: ["Logo design", "Merchandise", "Social contents"],
       de: ["Logodesign", "Merchandise", "Social-Media-Inhalte"],
     },
-    cardDesc: {
-      it: "Startfound è un'agenzia di consulenza finanziaria specializzata nel settore dell'ecosostenibilità con sede a Messina…",
-      en: "Startfound is a financial consulting agency specialising in environmental sustainability, based in Messina…",
-      de: "Startfound ist eine Finanzberatung mit Sitz in Messina, spezialisiert auf ökologische Nachhaltigkeit…",
-    },
     servizi: {
       it: ["Logo design", "Merchandise", "Contenuti social"],
       en: ["Logo design", "Merchandise", "Social contents"],
@@ -56,11 +51,6 @@ export const projects = [
       en: ["Logo design", "Brand identity", "Social contents"],
       de: ["Logodesign", "Markenidentität", "Social-Media-Inhalte"],
     },
-    cardDesc: {
-      it: "Storica è un'agenzia assicurativa di Messina attiva dal 1832…",
-      en: "Storica is an insurance agency in Messina, active since 1832…",
-      de: "Storica ist eine Versicherungsagentur in Messina, tätig seit 1832…",
-    },
     servizi: {
       it: ["Logo design", "Brand identity", "Contenuti social"],
       en: ["Logo design", "Brand identity", "Social contents"],
@@ -86,11 +76,6 @@ export const projects = [
       it: ["Logo design", "Brand identity", "Packaging"],
       en: ["Logo design", "Brand identity", "Packaging"],
       de: ["Logodesign", "Markenidentität", "Packaging"],
-    },
-    cardDesc: {
-      it: "Zankle è l'unico birrificio artigianale della città di Messina, produttore delle birre Scilla e Cariddi…",
-      en: "Zankle is the only craft brewery in the city of Messina, producer of the Scilla and Cariddi beers…",
-      de: "Zankle ist die einzige Craft-Brauerei der Stadt Messina und braut die Biere Scilla und Cariddi…",
     },
     servizi: {
       it: ["Logo design", "Brand identity", "Packaging"],

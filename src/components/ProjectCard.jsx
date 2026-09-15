@@ -9,7 +9,6 @@ export default function ProjectCard({ project }) {
 
   const services = project.cardServizi[language] || project.cardServizi.it;
   const servizio = services.length ? services[0] : "";
-  const desc = project.cardDesc[language] || project.cardDesc.it;
 
   return (
     <Link to={`/projects/${project.slug}`} className="project-card">
@@ -26,13 +25,9 @@ export default function ProjectCard({ project }) {
           style={{ opacity: loaded ? 1 : 0 }}
         />
       </div>
-      <div className="project-card-body">
-        <div className="project-card-meta">
-          <span>{servizio}</span>
-          <span>{project.anno}</span>
-        </div>
-        <h3>{project.nomeProgetto}</h3>
-        <p>{desc}</p>
+      <div className="project-card-meta">
+        <span>{servizio}</span>
+        <span>{project.anno}</span>
       </div>
     </Link>
   );
