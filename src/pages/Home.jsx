@@ -29,12 +29,7 @@ export default function Home() {
             <br />
             <Rotator words={t("home.heroRotator")} />
             <br />
-            {t("home.heroTitleSuffix").map((line, i, arr) => (
-              <span key={line}>
-                {line}
-                {i < arr.length - 1 && <br />}
-              </span>
-            ))}
+            {t("home.heroTitleSuffix")}
           </h1>
           <p>{t("home.heroDesc")}</p>
           <div className="hero-actions">

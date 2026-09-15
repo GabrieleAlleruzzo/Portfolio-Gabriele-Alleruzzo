@@ -10,7 +10,7 @@ export const translations = {
     home: {
       eyebrow: "GRAPHIC DESIGN — BRAND IDENTITY — SOCIAL MEDIA",
       heroTitlePrefix: "Designer di",
-      heroTitleSuffix: ["che muovono", "il pubblico"],
+      heroTitleSuffix: "che muovono il pubblico",
       heroRotator: ["logotipi", "web sites", "contenuti social"],
       heroDesc:
         "Mi chiamo Gabriele. Lavoro a fianco di piccole imprese e progetti indipendenti: parto dalle vostre parole, e le porto fino a un logo, un sistema di identità e contenuti social che sembrano davvero vostri.",
@@ -97,7 +97,7 @@ export const translations = {
     home: {
       eyebrow: "GRAPHIC DESIGN — BRAND IDENTITY — SOCIAL MEDIA",
       heroTitlePrefix: "Designer of",
-      heroTitleSuffix: ["that move people"],
+      heroTitleSuffix: "that move people",
       heroRotator: ["logotypes", "web sites", "social contents"],
       heroDesc:
         "I'm Gabriele. I work alongside small businesses and independent projects: I start from your own words and carry them through to a logo, an identity system and social content that genuinely feel like yours.",
@@ -183,7 +183,7 @@ export const translations = {
     home: {
       eyebrow: "GRAFIKDESIGN — MARKENIDENTITÄT — SOZIALE MEDIEN",
       heroTitlePrefix: "Gestalter von",
-      heroTitleSuffix: ["die Menschen bewegen"],
+      heroTitleSuffix: "die Menschen bewegen",
       heroRotator: ["Logotypen", "Websites", "Social-Media-Inhalte"],
       heroDesc:
         "Ich heiße Gabriele. Ich arbeite mit kleinen Unternehmen und unabhängigen Projekten: Ich beginne bei Ihren eigenen Worten und führe sie bis zu einem Logo, einem Identitätssystem und Social-Media-Inhalten, die sich wirklich nach Ihnen anfühlen.",
