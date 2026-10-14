@@ -1,5 +1,5 @@
 import { useLanguage } from "../i18n/LanguageContext";
-import { projects } from "../data/projects";
+import { projectsByRecency } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
 export default function Projects() {
@@ -12,7 +12,7 @@ export default function Projects() {
         {t("projects.title")}
       </h1>
       <div className="projects-grid">
-        {projects.map((project) => (
+        {projectsByRecency.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>

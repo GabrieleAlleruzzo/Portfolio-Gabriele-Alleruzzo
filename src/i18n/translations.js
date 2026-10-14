@@ -10,42 +10,41 @@ export const translations = {
     home: {
       eyebrow: "GRAPHIC DESIGN — BRAND IDENTITY — SOCIAL MEDIA",
       heroTitlePrefix: "Designer di",
-      heroTitleSuffix: "che muovono il pubblico",
+      heroTitleSuffix: "che muovono il pubblico",
       heroRotator: ["logotipi", "web sites", "contenuti social"],
       heroDesc:
-        "Mi chiamo Gabriele. Lavoro a fianco di piccole imprese e progetti indipendenti: parto dalle vostre parole, e le porto fino a un logo, un sistema di identità e contenuti social che sembrano davvero vostri.",
-      ctaProjects: "Guarda i progetti",
+        "Mi chiamo Gabriele Alleruzzo. Lavoro a fianco di piccole imprese e progetti indipendenti: parto dalle vostre idee e gli do una forma visiva, un'identità tangibile e un sistema di design per tutti i canali di comunicazione.",
+      ctaProjects: "Progetti",
       ctaContact: "Contattami",
-      servicesEyebrow: "Cosa faccio",
+      servicesEyebrow: "Servizi",
       services: [
         {
           title: "Logo design",
-          desc: "Un segno solo, disegnato con calma: bozzetti a mano, poi vettoriale, poi tutte le versioni che vi serviranno davvero.",
+          desc: "Consiste nel progetto grafico per eccellezza, la ricerca e concettualizzazione di un simbolo che dice più di mille parole.",
         },
         {
           title: "Brand identity",
-          desc: "Colori, caratteri, griglie e tono di voce raccolti in un piccolo manuale, così chi lavora con voi non deve indovinare.",
+          desc: "Colori, caratteri, griglie e tono, i quattro pilastri dell'identità visivia applicata alla tua comunicazione.",
         },
         {
           title: "Contenuti social",
-          desc: "Template per post, storie e caroselli, pensati perché possiate aggiornarli da soli senza perdere la coerenza.",
+          desc: "Template, shooting fotografici e video editng per dare vita ai tuoi servizi e portarerli al tuo pubblico.",
         },
       ],
-      projectsTitle: "Progetti scelti",
-      projectsAll: "Tutti i progetti →",
+      projectsTitle: "Progetti",
+      projectsAll: "Tutti →",
       aboutEyebrow: "Su di me",
-      aboutTitle:
-        "Dieci anni di marchi disegnati a mano e finiti in vettoriale.",
+      aboutTitle: "Dieci anni di esperienza tradotti in design.",
       aboutDesc1:
-        "Ho iniziato disegnando insegne per i negozi sotto casa e non ho mai smesso di partire dalla matita. Mi piacciono i progetti in cui si parla molto prima di aprire il computer: chi siete, chi volete accanto, cosa non volete assolutamente sembrare.",
+        "Disegno da quando riesco a tenere una matita in mano, ho deciso di fare del desgin un mestiere seguendo le lezioni di graphic design presso l'Accademia di Belle Arti di Catanaia, dove ho appreso i valori della comunicazione visiva e del progetto grafico.",
       aboutDesc2:
-        "Lavoro da solo, su pochi progetti alla volta, e vi tengo dentro ogni passaggio.",
+        "Lavoro da solo, su pochi progetti alla volta, aggiornandovi a ogni progresso.",
       aboutCta1: "Leggi la mia storia",
       aboutCta2: "Scarica il CV (PDF)",
       contactsEyebrow: "Contatti",
-      contactsTitle: "Raccontatemi il vostro progetto.",
+      contactsTitle: "Raccontami il tuo progetto.",
       contactsDesc:
-        "Due righe bastano: cosa fate, dove volete arrivare e quando. Rispondo entro due giorni lavorativi, sempre io.",
+        "Due righe bastano: cosa fai, dove vuoi arrivare e quando. Rispondo entro due giorni lavorativi, sempre io.",
       contactsCta: "Vai alla pagina contatti",
     },
     about: {
@@ -69,8 +68,8 @@ export const translations = {
     },
     contacts: {
       eyebrow: "Contatti",
-      title: "Raccontatemi il vostro progetto.",
-      desc: "Due righe bastano: cosa fate, dove volete arrivare e quando. Rispondo entro due giorni lavorativi, sempre io.",
+      title: "Raccontami il tuo progetto.",
+      desc: "Due righe bastano: cosa fai, dove vuoi arrivare e quando. Rispondo entro due giorni lavorativi, sempre io.",
       labels: {
         email: "Email",
         phone: "Telefono",
@@ -101,7 +100,7 @@ export const translations = {
       heroRotator: ["logotypes", "web sites", "social contents"],
       heroDesc:
         "I'm Gabriele. I work alongside small businesses and independent projects: I start from your own words and carry them through to a logo, an identity system and social content that genuinely feel like yours.",
-      ctaProjects: "See the work",
+      ctaProjects: "See projects",
       ctaContact: "Get in touch",
       servicesEyebrow: "What I do",
       services: [
@@ -186,22 +185,22 @@ export const translations = {
       heroTitleSuffix: "die Menschen bewegen",
       heroRotator: ["Logotypen", "Websites", "Social-Media-Inhalte"],
       heroDesc:
-        "Ich heiße Gabriele. Ich arbeite mit kleinen Unternehmen und unabhängigen Projekten: Ich beginne bei Ihren eigenen Worten und führe sie bis zu einem Logo, einem Identitätssystem und Social-Media-Inhalten, die sich wirklich nach Ihnen anfühlen.",
+        "Ich heiße Gabriele. Ich arbeite mit kleinen Unternehmen und unabhängigen Projekten: Ich beginne bei deinen eigenen Worten und führe sie bis zu einem Logo, einem Identitätssystem und Social-Media-Inhalten, die sich wirklich nach dir anfühlen.",
       ctaProjects: "Projekte ansehen",
-      ctaContact: "Schreiben Sie mir",
+      ctaContact: "Schreib mir",
       servicesEyebrow: "Was ich mache",
       services: [
         {
           title: "Logo design",
-          desc: "Ein einziges Zeichen, in Ruhe gezeichnet: Handskizzen, dann Vektoren, dann jede Version, die Sie wirklich brauchen.",
+          desc: "Ein einziges Zeichen, in Ruhe gezeichnet: Handskizzen, dann Vektoren, dann jede Version, die du wirklich brauchst.",
         },
         {
           title: "Brand identity",
-          desc: "Farben, Schriften, Raster und Tonalität in einem kurzen Handbuch gesammelt, damit niemand, der mit Ihnen arbeitet, raten muss.",
+          desc: "Farben, Schriften, Raster und Tonalität in einem kurzen Handbuch gesammelt, damit niemand, der mit dir arbeitet, raten muss.",
         },
         {
           title: "Social-Media-Inhalte",
-          desc: "Vorlagen für Posts, Stories und Karussells, so gemacht, dass Sie sie selbst aktualisieren können, ohne die Einheitlichkeit zu verlieren.",
+          desc: "Vorlagen für Posts, Stories und Karussells, so gemacht, dass du sie selbst aktualisieren kannst, ohne die Einheitlichkeit zu verlieren.",
         },
       ],
       projectsTitle: "Ausgewählte Projekte",
@@ -210,22 +209,22 @@ export const translations = {
       aboutTitle:
         "Zehn Jahre Zeichen, von Hand gezeichnet und in Vektoren fertiggestellt.",
       aboutDesc1:
-        "Angefangen habe ich mit Schildern für die Läden in meiner Straße, und ich beginne bis heute mit dem Bleistift. Ich mag Projekte, bei denen viel gesprochen wird, bevor der Rechner aufgeht: wer Sie sind, wen Sie an Ihrer Seite wollen, wonach Sie auf keinen Fall aussehen möchten.",
+        "Angefangen habe ich mit Schildern für die Läden in meiner Straße, und ich beginne bis heute mit dem Bleistift. Ich mag Projekte, bei denen viel gesprochen wird, bevor der Rechner aufgeht: wer du bist, wen du an deiner Seite haben willst, wonach du auf keinen Fall aussehen möchtest.",
       aboutDesc2:
-        "Ich arbeite allein, an wenigen Projekten gleichzeitig, und binde Sie in jeden Schritt ein.",
+        "Ich arbeite allein, an wenigen Projekten gleichzeitig, und binde dich in jeden Schritt ein.",
       aboutCta1: "Meine Geschichte lesen",
       aboutCta2: "Lebenslauf herunterladen (PDF)",
       contactsEyebrow: "Kontakt",
-      contactsTitle: "Erzählen Sie mir von Ihrem Projekt.",
+      contactsTitle: "Erzähl mir von deinem Projekt.",
       contactsDesc:
-        "Zwei Zeilen genügen: was Sie machen, wohin Sie wollen und bis wann. Ich antworte innerhalb von zwei Werktagen, immer persönlich.",
+        "Zwei Zeilen reichen: was du machst, wohin du willst und bis wann. Ich antworte innerhalb von zwei Werktagen, immer persönlich.",
       contactsCta: "Zur Kontaktseite",
     },
     about: {
       eyebrow: "Über mich",
       title:
         "Zehn Jahre Zeichen, von Hand gezeichnet und in Vektoren fertiggestellt.",
-      desc: "Angefangen habe ich mit Schildern für die Läden in meiner Straße, und ich beginne bis heute mit dem Bleistift. Ich mag Projekte, bei denen viel gesprochen wird, bevor der Rechner aufgeht: wer Sie sind, wen Sie an Ihrer Seite wollen, wonach Sie auf keinen Fall aussehen möchten. Ich arbeite allein, an wenigen Projekten gleichzeitig, und binde Sie in jeden Schritt ein.",
+      desc: "Angefangen habe ich mit Schildern für die Läden in meiner Straße, und ich beginne bis heute mit dem Bleistift. Ich mag Projekte, bei denen viel gesprochen wird, bevor der Rechner aufgeht: wer du bist, wen du an deiner Seite haben willst, wonach du auf keinen Fall aussehen möchtest. Ich arbeite allein, an wenigen Projekten gleichzeitig, und binde dich in jeden Schritt ein.",
       educationEyebrow: "Ausbildung",
       educationTitle:
         "Editorial Design an der Akademie der Bildenden Künste in Catania.",
@@ -243,8 +242,8 @@ export const translations = {
     },
     contacts: {
       eyebrow: "Kontakt",
-      title: "Erzählen Sie mir von Ihrem Projekt.",
-      desc: "Zwei Zeilen genügen: was Sie machen, wohin Sie wollen und bis wann. Ich antworte innerhalb von zwei Werktagen, immer persönlich.",
+      title: "Erzähl mir von deinem Projekt.",
+      desc: "Zwei Zeilen reichen: was du machst, wohin du willst und bis wann. Ich antworte innerhalb von zwei Werktagen, immer persönlich.",
       labels: {
         email: "Email",
         phone: "Telefon",

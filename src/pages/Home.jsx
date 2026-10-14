@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
-import { projects } from "../data/projects";
-import ProjectCard from "../components/ProjectCard";
+import ProjectsSlider from "../components/ProjectsSlider";
 import Rotator from "../components/Rotator";
 import {
   LogoDesignIcon,
@@ -15,15 +14,15 @@ const serviceIcons = [LogoDesignIcon, BrandIdentityIcon, SocialContentsIcon];
 export default function Home() {
   const { t } = useLanguage();
   const services = t("home.services");
-  const featuredProjects = projects.slice(0, 3);
 
   return (
     <>
       <section id="top" className="hero wrap">
         <div>
-          <div className="eyebrow" style={{ marginBottom: 22 }}>
+          {/* 
+           <div className="eyebrow" style={{ marginBottom: 22 }}>
             {t("home.eyebrow")}
-          </div>
+          </div> */}
           <h1>
             {t("home.heroTitlePrefix")}
             <br />
@@ -74,11 +73,7 @@ export default function Home() {
             {t("home.projectsAll")}
           </Link>
         </div>
-        <div className="projects-grid">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        <ProjectsSlider />
       </section>
 
       <section id="about" className="home-about">

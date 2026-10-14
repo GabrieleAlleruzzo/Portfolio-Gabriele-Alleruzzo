@@ -418,6 +418,80 @@ h6 {
   gap: 24px;
 }
 
+/* Projects slider */
+
+.projects-slider {
+  position: relative;
+}
+
+.projects-slider-viewport {
+  overflow: clip;
+  overflow-clip-margin: 12px;
+}
+
+.projects-slider-track {
+  --gap: 24px;
+  --v: 3;
+  display: flex;
+  gap: var(--gap);
+  transform: translateX(
+    calc(var(--index) * -1 * (100% + var(--gap)) / var(--v))
+  );
+}
+
+.projects-slider-track.animate {
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.projects-slider-item {
+  flex: 0 0 calc((100% - var(--gap) * (var(--v) - 1)) / var(--v));
+  min-width: 0;
+}
+
+.projects-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: color-mix(in srgb, var(--color-bg) 25%, transparent);
+  border: 1px solid var(--color-divider);
+  border-radius: 50%;
+  color: var(--color-accent-700);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.projects-slider-arrow:hover {
+  background: color-mix(in srgb, var(--color-bg) 50%, transparent);
+}
+
+.projects-slider-prev {
+  left: 8px;
+}
+
+.projects-slider-next {
+  right: 8px;
+}
+
+@media (max-width: 900px) {
+  .projects-slider-track {
+    --gap: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-slider-track {
+    --gap: 20px;
+    --v: 1;
+  }
+}
+
 @keyframes ga-spin {
   to {
     transform: rotate(360deg);
