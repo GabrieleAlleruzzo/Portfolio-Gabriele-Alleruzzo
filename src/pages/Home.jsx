@@ -11,8 +11,14 @@ import homeAbout from "../assets/home-about.png";
 
 const serviceIcons = [LogoDesignIcon, BrandIdentityIcon, SocialContentsIcon];
 
+const cvFiles = {
+  it: "/cv/Curriculum-Gabriele-Alleruzzo.pdf",
+  en: "/cv/CV-Gabriele-Alleruzzo.pdf",
+  de: "/cv/Lebenslauf-Gabriele-Alleruzzo.pdf",
+};
+
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const services = t("home.services");
 
   return (
@@ -105,8 +111,8 @@ export default function Home() {
               </Link>
               <a
                 className="btn"
-                href="/Gabriele-Alleruzzo-CV.pdf"
-                download="Gabriele-Alleruzzo-CV.pdf"
+                href={cvFiles[language]}
+                download={cvFiles[language].split("/").pop()}
                 style={{
                   color: "var(--color-neutral-100)",
                   borderColor: "var(--color-bg)",
