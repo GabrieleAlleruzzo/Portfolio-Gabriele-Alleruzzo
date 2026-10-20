@@ -1091,3 +1091,63 @@ h6 {
     padding: 40px 20px 48px;
   }
 }
+
+/* Project detail: mobile order (back link, title, description, gallery, services, meta, channels) */
+@media (max-width: 425px) {
+  .project-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 40px 20px 48px;
+  }
+  .project-info {
+    display: contents;
+  }
+  .project-info .back-link {
+    order: 1;
+    align-self: flex-start;
+  }
+  .project-info h1 {
+    order: 2;
+  }
+  .project-info > p {
+    order: 3;
+  }
+  .project-gallery {
+    order: 4;
+    margin-top: 10px;
+  }
+  .project-services {
+    order: 5;
+  }
+  .project-meta {
+    order: 6;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+  .project-channels {
+    order: 7;
+  }
+}
+
+/* Mobile 425: header (logo only, language switch next to the hamburger) and footer */
+@media (max-width: 425px) {
+  .brand-text {
+    display: none;
+  }
+  .header-bar {
+    flex-wrap: nowrap;
+  }
+  .lang-switch {
+    order: 2;
+    margin-left: auto;
+  }
+  .menu-btn {
+    order: 3;
+    margin-left: 0;
+  }
+  .footer-inner {
+    font-size: 8px;
+  }
+}
