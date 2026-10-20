@@ -1151,3 +1151,17 @@ h6 {
     font-size: 8px;
   }
 }
+
+/* Project detail: left info column scrolls on its own, scrollbar hidden (desktop/tablet) */
+@media (min-width: 426px) {
+  .project-info {
+    position: sticky;
+    top: 84px;
+    max-height: calc(100vh - 119px);
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .project-info::-webkit-scrollbar {
+    display: none;
+  }
+}
