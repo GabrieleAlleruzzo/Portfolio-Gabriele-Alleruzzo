@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
-import logo from "../assets/logo-mark.png";
+import logo from "../assets/monogram.svg";
 
 const navItems = [
   { to: "/", key: "home" },
