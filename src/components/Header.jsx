@@ -28,7 +28,7 @@ export default function Header() {
       <div className="header-bar wrap">
         <NavLink to="/" className="brand">
           <img src={logo} alt="Gabriele Alleruzzo" />
-          Gabriele Alleruzzo
+          <span className="brand-text">Gabriele Alleruzzo</span>
         </NavLink>
 
         <nav className="nav-inline">{renderNavLinks()}</nav>
